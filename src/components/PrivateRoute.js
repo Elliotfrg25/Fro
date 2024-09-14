@@ -1,14 +1,11 @@
-import React from "react";
-import { Outlet, Navigate } from "react-router-dom";
-import { useAuth } from "./AuthContext";
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = () => {
-    const { currentUser } = useAuth();
+const PrivateRoute = ({ element: Element, ...rest }) => {
+    const isAuthenticated = localStorage.getItem('token'); // Verifica si el usuario está autenticado
 
-    return currentUser ? (
-        <Outlet />
-    ) : (
-        <Navigate to="/signin" replace />
+    return (
+        isAuthenticated ? <Element {...rest} /> : <Navigate to="/signin" />
     );
 };
 

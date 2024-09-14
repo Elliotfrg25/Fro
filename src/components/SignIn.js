@@ -2,21 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/SignIn.css';
 import CustomButton from './CustomButton/CustomButton';
-import { loginUser } from '../API/api';
+import { useAuth } from '../components/AuthContext'; // Importa el contexto de autenticación
 
 const SignIn = () => {
+    const { signIn } = useAuth(); // Extrae la función de signIn del contexto
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         e.stopPropagation();
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        const response = await loginUser(email, password);
-        if (response.success) {
-            console.log('Inicio de sesión exitoso:', response.token);
-        } else {
-            console.error('Error al iniciar sesión:', response.error);
-        }
+        await signIn(email, password); // Usa la función del contexto para iniciar sesión
     };
 
     return (
@@ -62,5 +59,6 @@ const SignIn = () => {
     );
 };
 
-export default SignIn; 
+export default SignIn;
+
 

@@ -6,7 +6,7 @@ import { useAuth } from "./AuthContext";
 
 const StyledToolbar = styled(Toolbar)({
     justifyContent: "space-between",
-    padding: "0 2rem", // Mejorar el espaciado lateral
+    padding: "0 2rem",
 });
 
 const NavBar = () => {
@@ -16,8 +16,8 @@ const NavBar = () => {
 
     const handleLogout = async () => {
         try {
-            await logout();
-            navigate("/");
+            await logout(); // Ahora elimina el token y limpia el estado de usuario
+            navigate("/"); // Redirige al usuario a la página principal
         } catch (error) {
             console.error("Error al cerrar sesión:", error);
         }
@@ -114,7 +114,8 @@ const NavBar = () => {
     );
 };
 
-export default NavBar; 
+export default NavBar;
+
 
 
 
