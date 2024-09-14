@@ -1,0 +1,48 @@
+.security-settings-container {
+    padding: 2rem;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.security-option {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.security-questions h3,
+.recent-activity h3,
+.security-alerts h3 {
+    color: #ffffff;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.security-questions p,
+.recent-activity p {
+    color: #cccccc;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.security-questions input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.security-alerts p {
+    color: #cccccc;
+    margin: 0;
+    padding: 5px 0;
+}

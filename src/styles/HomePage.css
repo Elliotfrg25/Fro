@@ -1,0 +1,431 @@
+/* Fondo de la página principal */
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../styles/Imagenes/fonde.webp');
+    /* Ruta corregida */
+    background-size: cover;
+    /* Para que la imagen cubra toda la pantalla */
+    background-position: center;
+    /* Para centrar la imagen */
+    background-attachment: fixed;
+    /* Efecto parallax */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    color: #333;
+    /* Texto más oscuro para buena legibilidad */
+    padding: 0 2rem;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animación de desvanecimiento suave al hacer scroll */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sección de Características (Features) */
+.features {
+    text-align: center;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    /* Espacio aumentado entre las tarjetas */
+    flex-wrap: wrap;
+    background-color: #f5f7fa95;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    /* Fondo muy claro para hacer que las tarjetas resalten */
+}
+
+.features-title {
+    font-size: 2.8rem;
+    /* Título más grande */
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.feature-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex: 1;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    /* Ajuste del tamaño máximo de las cajas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background-color: #f0f8ff;
+    /* Cambio de fondo en hover */
+}
+
+.feature-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #555;
+    /* Color del título */
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.feature-item img {
+    max-width: 40px;
+    /* Tamaño pequeño para iconos */
+    margin-bottom: 1.5rem;
+    /* Agregar icono o imagen en cada feature */
+}
+
+/* Botón general */
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 768px) {
+    .features {
+        padding: 2rem 0.5rem;
+    }
+
+    .feature-item {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .features-title {
+        font-size: 2rem;
+    }
+}
+
+/* Sección del Conversor de Moneda */
+.currency-converter {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #ffffff;
+    /* Fondo blanco */
+    border-top: 3px solid #0f4c5c;
+    border-bottom: 3px solid #0f4c5c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    /* Separar de la siguiente sección */
+}
+
+/* Inputs y Selects - Alineación horizontal */
+.currency-inputs {
+    display: flex;
+    /* Cambiar a flexbox */
+    justify-content: center;
+    /* Alinear horizontalmente en el centro */
+    align-items: center;
+    /* Alinear verticalmente */
+    gap: 1rem;
+    /* Espacio entre los elementos */
+    margin-top: 2rem;
+}
+
+.currency-inputs input,
+.currency-inputs select {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #0f4c5c;
+    /* Bordes azules más gruesos */
+    font-size: 1.2rem;
+    background-color: #f8f9fa;
+    color: #333;
+    width: 150px;
+    /* Tamaño adecuado para alineación horizontal */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil en los inputs */
+}
+
+/* Hover y foco */
+.currency-inputs input:hover,
+.currency-inputs select:hover,
+.currency-inputs input:focus,
+.currency-inputs select:focus {
+    background-color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Botón */
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #0f4c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover en el botón */
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Mensaje de equivalencia */
+.currency-converter span {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #0f4c5c;
+    font-weight: bold;
+}
+
+/* Sección de Países */
+.countries-list {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #ffffff95;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* Separar de la calculadora */
+}
+
+.countries-list ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.countries-list li {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(251, 251, 251, 0.1);
+    /* Azul claro */
+    border-radius: 8px;
+    color: #0f4c5c;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.countries-list li:hover {
+    background-color: rgba(0, 123, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Sección de Reseñas */
+.customer-reviews {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #ffffff95;
+    border-top: 2px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    /* Usar Flexbox */
+    flex-wrap: wrap;
+    /* Permitir que se envuelvan en filas */
+    justify-content: space-around;
+    /* Espacio alrededor de las reseñas */
+}
+
+/* Cada cajón de reseña */
+.review-item {
+    margin: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    flex: 1 1 calc(33% - 2rem);
+    /* Cada cajón toma un tercio del ancho */
+    max-width: 300px;
+    /* Limitar el ancho máximo de cada cajón */
+    box-sizing: border-box;
+    /* Incluir padding y borde en el ancho total */
+}
+
+/* Efecto hover */
+.review-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Estilos para las estrellas de las reseñas */
+.stars {
+    color: #FFD700;
+    /* Color dorado */
+    font-size: 1.5rem;
+    /* Tamaño de las estrellas */
+    margin-top: 0.5rem;
+    /* Separar las estrellas del texto de la reseña */
+}
+
+/* Sección de Bancos Asociados */
+.associated-banks {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #ffffff95;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bank-logos img {
+    width: 100px;
+    margin: 0 1rem;
+    filter: grayscale(50%);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.bank-logos img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    padding: 2rem;
+    background-color: #0f4c5c;
+    /* Fondo azul oscuro */
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+/* Cada sección del footer */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    /* Asegura que cada sección tenga un tamaño mínimo */
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #007bff;
+    /* Efecto hover en los enlaces */
+}
+
+/* Estilo para redes sociales */
+.social-icons a {
+    display: inline-block;
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+/* Formulario de suscripción */
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-section form input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 250px;
+}
+
+.footer-section form button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-section form button:hover {
+    background-color: #0056b3;
+}
+
+/* Ajuste de tamaño en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}

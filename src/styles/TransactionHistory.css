@@ -1,0 +1,35 @@
+/* src/styles/TransactionHistory.css */
+@import './SignIn.css';
+
+.transaction-history {
+    background-color: rgba(34, 34, 34, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+    z-index: 10;
+}
+
+.transaction-history h2 {
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--color-text);
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transaction-table tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.2);
+}
