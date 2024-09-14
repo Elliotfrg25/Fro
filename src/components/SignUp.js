@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Container, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Container, Row, Col, Alert } from 'reactstrap'; // Import Alert para mostrar errores
 import '../styles/SignUp.css';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../API/api'; // Asegúrate de que la ruta sea correcta
@@ -9,20 +9,29 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState(null); // Estado para el manejo de errores
+    const [success, setSuccess] = useState(false); // Estado para mostrar éxito
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError(null); // Resetea el estado de error al intentar registrar
+        setSuccess(false); // Resetea el estado de éxito
+
         if (password !== confirmPassword) {
-            alert('Las contraseñas no coinciden');
+            setError('Las contraseñas no coinciden');
             return;
         }
 
-        // Llamada a la función de la API para registrar al usuario
-        const response = await registerUser({ name, email, password });
-        if (response.success) {
-            console.log('Usuario registrado:', response.user);
-        } else {
-            console.error('Error registrando al usuario:', response.error);
+        try {
+            // Llamada a la función de la API para registrar al usuario
+            const response = await registerUser({ name, email, password });
+            if (response.success) {
+                setSuccess(true);
+            } else {
+                setError(response.error || 'Error registrando al usuario');
+            }
+        } catch (error) {
+            setError('Error en el registro: ' + error.message);
         }
     };
 
@@ -32,6 +41,9 @@ const SignUp = () => {
                 <Col xs={{ size: 12 }} sm={{ size: 10, offset: 1 }} md={{ size: 8, offset: 2 }} lg={{ size: 6, offset: 3 }}>
                     <div className="signup-form">
                         <h2>Registrarse</h2>
+                        {/* Mostrar alerta en caso de error */}
+                        {error && <Alert color="danger">{error}</Alert>}
+                        {success && <Alert color="success">Usuario registrado con éxito</Alert>}
                         <Form onSubmit={handleSubmit}>
                             <FormGroup>
                                 <Label for="name">Nombre</Label>
@@ -52,6 +64,7 @@ const SignUp = () => {
                                     name="email"
                                     id="email"
                                     placeholder="Correo electrónico"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" // Validación de correo
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -64,6 +77,7 @@ const SignUp = () => {
                                     name="password"
                                     id="password"
                                     placeholder="Contraseña"
+                                    minLength="8" // Mínimo de 8 caracteres
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -76,6 +90,7 @@ const SignUp = () => {
                                     name="confirmPassword"
                                     id="confirmPassword"
                                     placeholder="Confirmar contraseña"
+                                    minLength="8" // Mismo mínimo para confirmación
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
@@ -96,6 +111,8 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+
 
 
 
