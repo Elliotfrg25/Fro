@@ -4,9 +4,37 @@
     background-color: rgba(34, 34, 34, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
+/* Estilos para el mensaje de error */
 .error-message {
     font-size: 24px;
     color: #d9534f;
+    margin-bottom: 20px;
+}
+
+/* Responsividad para pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+    .error-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .error-message {
+        font-size: 20px;
+    }
+}
+
+/* Responsividad adicional para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .error-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .error-message {
+        font-size: 18px;
+    }
 }

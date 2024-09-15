@@ -1,46 +1,35 @@
-/* src/styles/MoneyTransfer.css */
 @import './SignIn.css';
 
 /* Estilos para el formulario de transferencia */
 .transfer-form {
     background-color: rgba(34, 34, 34, 0.9);
     padding: 2.5rem;
-    /* Aumentar padding para más espacio interno */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    /* Sombra más suave */
     width: 100%;
     max-width: 450px;
     position: relative;
     z-index: 10;
     margin: 0 auto;
-    /* Centrar el formulario horizontalmente */
 }
 
 /* Título del formulario */
 .transfer-form h2 {
     margin-bottom: 2rem;
-    /* Más espacio debajo del título */
     color: var(--color-primary);
-    /* Usar color primario para resaltar */
     font-size: 2rem;
     text-align: center;
-    /* Alinear el título al centro */
     font-weight: bold;
-    /* Hacer el título más llamativo */
 }
 
 /* Contenedor de los grupos de formulario */
 .form-group {
     margin-bottom: 20px;
-    /* Más espacio entre los campos */
     text-align: left;
-    /* Alinear a la izquierda */
 }
 
 /* Estilo para los campos de entrada */
 .transfer-form input {
     width: 100%;
-    /* Ocupa el 100% del contenedor */
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -49,7 +38,6 @@
     font-size: 1rem;
     margin-bottom: 1rem;
     transition: background-color 0.3s, border-color 0.3s;
-    /* Transiciones suaves */
 }
 
 .transfer-form input:focus {
@@ -62,7 +50,6 @@
 /* Estilo del botón */
 .transfer-form .btn-primary {
     width: 100%;
-    /* Botón ocupa todo el ancho */
     padding: 0.75rem 1.5rem;
     background-color: var(--color-primary);
     color: white;
@@ -72,14 +59,12 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    /* Efectos suaves */
     margin-top: 1rem;
 }
 
 .transfer-form .btn-primary:hover {
     background-color: var(--color-secondary);
     transform: translateY(-3px);
-    /* Efecto hover que eleva el botón */
 }
 
 .form-group button {
@@ -91,23 +76,41 @@
 @media (max-width: 768px) {
     .transfer-form {
         width: 90%;
-        /* Ajusta el ancho en pantallas pequeñas */
         padding: 1.5rem;
     }
 
     .transfer-form h2 {
         font-size: 1.8rem;
-        /* Ajusta el tamaño del título en móviles */
     }
 
     .transfer-form input {
         font-size: 0.9rem;
-        /* Ajusta el tamaño del texto de los inputs */
     }
 
     .transfer-form .btn-primary {
         font-size: 1rem;
         padding: 0.7rem 1.2rem;
-        /* Ajusta el tamaño del botón en móviles */
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .transfer-form {
+        padding: 1.2rem;
+        width: 100%;
+    }
+
+    .transfer-form h2 {
+        font-size: 1.6rem;
+    }
+
+    .transfer-form input {
+        font-size: 0.85rem;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .transfer-form .btn-primary {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
     }
 }

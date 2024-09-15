@@ -4,17 +4,11 @@
     flex-direction: column;
     align-items: center;
     background-image: url('../styles/Imagenes/fonde.webp');
-    /* Ruta corregida */
     background-size: cover;
-    /* Para que la imagen cubra toda la pantalla */
     background-position: center;
-    /* Para centrar la imagen */
     background-attachment: fixed;
-    /* Efecto parallax */
     background-repeat: no-repeat;
-    /* Evita que la imagen se repita */
     color: #333;
-    /* Texto más oscuro para buena legibilidad */
     padding: 0 2rem;
     font-family: 'Poppins', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -39,17 +33,14 @@ section.visible {
     display: flex;
     justify-content: center;
     gap: 2.5rem;
-    /* Espacio aumentado entre las tarjetas */
     flex-wrap: wrap;
     background-color: #f5f7fa95;
     margin-top: 4rem;
     margin-bottom: 4rem;
-    /* Fondo muy claro para hacer que las tarjetas resalten */
 }
 
 .features-title {
     font-size: 2.8rem;
-    /* Título más grande */
     font-weight: bold;
     margin-bottom: 2rem;
     color: #333;
@@ -69,7 +60,6 @@ section.visible {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     max-width: 350px;
-    /* Ajuste del tamaño máximo de las cajas */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
     position: relative;
@@ -79,14 +69,12 @@ section.visible {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     background-color: #f0f8ff;
-    /* Cambio de fondo en hover */
 }
 
 .feature-item h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
     color: #555;
-    /* Color del título */
 }
 
 .feature-item p {
@@ -97,9 +85,7 @@ section.visible {
 
 .feature-item img {
     max-width: 40px;
-    /* Tamaño pequeño para iconos */
     margin-bottom: 1.5rem;
-    /* Agregar icono o imagen en cada feature */
 }
 
 /* Botón general */
@@ -141,25 +127,18 @@ button:hover {
     text-align: center;
     padding: 3rem 1rem;
     background-color: #ffffff;
-    /* Fondo blanco */
     border-top: 3px solid #0f4c5c;
     border-bottom: 3px solid #0f4c5c;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     margin-bottom: 2rem;
-    /* Separar de la siguiente sección */
 }
 
-/* Inputs y Selects - Alineación horizontal */
 .currency-inputs {
     display: flex;
-    /* Cambiar a flexbox */
     justify-content: center;
-    /* Alinear horizontalmente en el centro */
     align-items: center;
-    /* Alinear verticalmente */
     gap: 1rem;
-    /* Espacio entre los elementos */
     margin-top: 2rem;
 }
 
@@ -168,18 +147,14 @@ button:hover {
     padding: 1rem;
     border-radius: 8px;
     border: 2px solid #0f4c5c;
-    /* Bordes azules más gruesos */
     font-size: 1.2rem;
     background-color: #f8f9fa;
     color: #333;
     width: 150px;
-    /* Tamaño adecuado para alineación horizontal */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil en los inputs */
 }
 
-/* Hover y foco */
 .currency-inputs input:hover,
 .currency-inputs select:hover,
 .currency-inputs input:focus,
@@ -190,7 +165,6 @@ button:hover {
     outline: none;
 }
 
-/* Botón */
 button {
     padding: 0.75rem 1.5rem;
     background-color: #0f4c5c;
@@ -204,7 +178,6 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover en el botón */
 button:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
@@ -230,7 +203,6 @@ button:active {
     background-color: #ffffff95;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    /* Separar de la calculadora */
 }
 
 .countries-list ul {
@@ -247,7 +219,6 @@ button:active {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     background-color: rgba(251, 251, 251, 0.1);
-    /* Azul claro */
     border-radius: 8px;
     color: #0f4c5c;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -267,14 +238,10 @@ button:active {
     margin-top: 2rem;
     margin-bottom: 2rem;
     display: flex;
-    /* Usar Flexbox */
     flex-wrap: wrap;
-    /* Permitir que se envuelvan en filas */
     justify-content: space-around;
-    /* Espacio alrededor de las reseñas */
 }
 
-/* Cada cajón de reseña */
 .review-item {
     margin: 1rem;
     padding: 1.5rem;
@@ -284,27 +251,19 @@ button:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     flex: 1 1 calc(33% - 2rem);
-    /* Cada cajón toma un tercio del ancho */
     max-width: 300px;
-    /* Limitar el ancho máximo de cada cajón */
     box-sizing: border-box;
-    /* Incluir padding y borde en el ancho total */
 }
 
-/* Efecto hover */
 .review-item:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
 
-/* Estilos para las estrellas de las reseñas */
 .stars {
     color: #FFD700;
-    /* Color dorado */
     font-size: 1.5rem;
-    /* Tamaño de las estrellas */
     margin-top: 0.5rem;
-    /* Separar las estrellas del texto de la reseña */
 }
 
 /* Sección de Bancos Asociados */
@@ -333,7 +292,6 @@ button:active {
     width: 100%;
     padding: 2rem;
     background-color: #0f4c5c;
-    /* Fondo azul oscuro */
     text-align: center;
     color: white;
     font-size: 0.9rem;
@@ -349,11 +307,9 @@ button:active {
     gap: 2rem;
 }
 
-/* Cada sección del footer */
 .footer-section {
     flex: 1;
     min-width: 200px;
-    /* Asegura que cada sección tenga un tamaño mínimo */
 }
 
 .footer-section h4 {
@@ -378,10 +334,8 @@ button:active {
 
 .footer-section ul li a:hover {
     color: #007bff;
-    /* Efecto hover en los enlaces */
 }
 
-/* Estilo para redes sociales */
 .social-icons a {
     display: inline-block;
     margin: 0 1rem;
@@ -393,7 +347,6 @@ button:active {
     color: #007bff;
 }
 
-/* Formulario de suscripción */
 .footer-section form {
     display: flex;
     flex-direction: column;
@@ -422,7 +375,6 @@ button:active {
     background-color: #0056b3;
 }
 
-/* Ajuste de tamaño en pantallas más pequeñas */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;

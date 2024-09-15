@@ -5,13 +5,52 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80%;
     max-width: 400px;
+    margin: 0 auto;
+    /* Centrar el contenedor */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-profile-container:hover {
+    background-color: rgba(34, 34, 34, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .user-info {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
-    border-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-info:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .user-profile-container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .user-info {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-profile-container {
+        width: 95%;
+        padding: 1.2rem;
+    }
+
+    .user-info {
+        padding: 7px;
+        font-size: 0.9rem;
+        /* Reducir el tamaño del texto para pantallas pequeñas */
+    }
 }

@@ -10,6 +10,14 @@
     color: var(--color-text);
 }
 
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .bank-accounts {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
 .bank-account-item {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
@@ -20,6 +28,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .bank-account-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .bank-account-item p {
@@ -51,6 +67,13 @@
     font-size: 18px;
 }
 
+/* Ajuste de la tipografía para pantallas pequeñas */
+@media (max-width: 768px) {
+    .bank-account-form h3 {
+        font-size: 16px;
+    }
+}
+
 .bank-account-form select,
 .bank-account-form input {
     width: 100%;
@@ -73,4 +96,20 @@
 .bank-account-form button:hover {
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);
+}
+
+/* Ajuste general para pantallas pequeñas */
+@media (max-width: 480px) {
+    .bank-accounts {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .bank-account-form h3 {
+        font-size: 14px;
+    }
+
+    .bank-account-item button {
+        padding: 0.2rem 0.4rem;
+    }
 }

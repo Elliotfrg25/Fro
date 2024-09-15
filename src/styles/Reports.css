@@ -2,10 +2,47 @@
     padding: 20px;
     background-color: rgba(34, 34, 34, 0.8);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 20px auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reports-container:hover {
+    background-color: rgba(34, 34, 34, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .report-chart {
     max-width: 800px;
     margin: auto;
+    transition: transform 0.3s ease;
+}
+
+.report-chart:hover {
+    transform: scale(1.02);
+}
+
+/* Responsividad para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+    .reports-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .report-chart {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .reports-container {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .report-chart {
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }

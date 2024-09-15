@@ -5,6 +5,16 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80%;
     max-width: 400px;
+    margin: 0 auto;
+    /* Centra el contenedor */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .currency-converter-container {
+        width: 95%;
+        padding: 1rem;
+    }
 }
 
 .currency-input,
@@ -20,6 +30,30 @@
     border: none;
 }
 
+/* Ajuste de la tipografía y padding en pantallas pequeñas */
+@media (max-width: 768px) {
+
+    .currency-input,
+    .currency-select {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
 .currency-select:focus {
     box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.5);
+}
+
+/* Ajuste general para pantallas muy pequeñas (320px a 480px) */
+@media (max-width: 480px) {
+    .currency-converter-container {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .currency-input,
+    .currency-select {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
 }
