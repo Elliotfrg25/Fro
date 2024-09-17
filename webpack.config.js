@@ -1,4 +1,4 @@
-const TerserPlugin = require('terser-webpack-plugin'); // Asegúrate de requerirlo aquí
+const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -45,5 +45,5 @@ module.exports = {
             minify: true,
         }),
     ],
+    ignoreWarnings: [/Failed to parse source map/], // Ignorar advertencias específicas
 };
-

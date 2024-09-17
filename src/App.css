@@ -1,16 +1,24 @@
+/* App.css */
+
+/* Estilos globales para .App */
 .App {
-  text-align: center;
   background-color: #20232a;
   /* Fondo más oscuro para mejor contraste */
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Nueva clase para centrar el contenido */
+.App-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos existentes */
 .App-logo {
   height: 40vmin;
   pointer-events: none;

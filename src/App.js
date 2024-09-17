@@ -1,3 +1,4 @@
+// App.js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from './components/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
@@ -26,31 +27,35 @@ function App() {
   return (
     <Router>
       <AuthProvider>
+        {/* Movemos el NavBar fuera del contenedor .App */}
         <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+        {/* Agregamos el contenedor .App para el resto del contenido */}
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
 
-          {/* Rutas protegidas */}
-          <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/transfer" element={<MoneyTransfer />} />
-            <Route path="/history" element={<TransactionHistory />} />
-            <Route path="/notifications" element={<NotificationSystem />} />
-            <Route path="/reports" element={<Reports />} />
-          </Route>
+            {/* Rutas protegidas */}
+            <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/transfer" element={<MoneyTransfer />} />
+              <Route path="/history" element={<TransactionHistory />} />
+              <Route path="/notifications" element={<NotificationSystem />} />
+              <Route path="/reports" element={<Reports />} />
+            </Route>
 
-          {/* Otras rutas */}
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/currency-converter" element={<CurrencyConverter />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/security-settings" element={<SecuritySettings />} />
-          <Route path="/error" element={<ErrorPage />} />
-          <Route path="/third-party-integration" element={<ThirdPartyIntegration />} />
-          <Route path="/user-profile" element={<UserProfile />} />
-          <Route path="/bank-accounts" element={<BankAccounts />} />
-        </Routes>
+            {/* Otras rutas */}
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/currency-converter" element={<CurrencyConverter />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/security-settings" element={<SecuritySettings />} />
+            <Route path="/error" element={<ErrorPage />} />
+            <Route path="/third-party-integration" element={<ThirdPartyIntegration />} />
+            <Route path="/user-profile" element={<UserProfile />} />
+            <Route path="/bank-accounts" element={<BankAccounts />} />
+          </Routes>
+        </div>
       </AuthProvider>
     </Router>
   );

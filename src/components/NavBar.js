@@ -4,9 +4,13 @@ import { AppBar, Toolbar, Typography, Button, Menu, MenuItem } from "@mui/materi
 import { styled } from "@mui/system";
 import { useAuth } from "./AuthContext";
 
-const StyledToolbar = styled(Toolbar)({
+const StyledToolbar = styled((props) => <Toolbar disableGutters {...props} />)({
+    width: '100%',
+    maxWidth: 'none', // Eliminamos cualquier limitación de ancho
     justifyContent: "space-between",
-    padding: "0 2rem",
+    padding: 0, // Eliminamos el padding lateral
+    minHeight: "64px",
+    margin: 0,
 });
 
 const NavBar = () => {
@@ -16,8 +20,8 @@ const NavBar = () => {
 
     const handleLogout = async () => {
         try {
-            await logout(); // Ahora elimina el token y limpia el estado de usuario
-            navigate("/"); // Redirige al usuario a la página principal
+            await logout();
+            navigate("/");
         } catch (error) {
             console.error("Error al cerrar sesión:", error);
         }
@@ -32,16 +36,33 @@ const NavBar = () => {
     };
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "#0f4c5c", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)" }}>
+        <AppBar
+            position="static"
+            sx={{
+                width: '100%',
+                maxWidth: 'none', // Aseguramos que el AppBar ocupe todo el ancho
+                backgroundColor: "#0f4c5c",
+                padding: 0, // Removemos padding adicional
+                margin: 0,
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            }}
+        >
             <StyledToolbar>
-                {/* Logo / Título de la aplicación */}
                 <Button color="inherit" onClick={() => navigate("/")} sx={{ textTransform: "none" }}>
-                    <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold", color: "#fff" }}>
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            fontWeight: "bold",
+                            color: "#fff",
+                            fontSize: "1.8rem",
+                            '@media (max-width: 768px)': { fontSize: "1.5rem" },
+                            '@media (max-width: 480px)': { fontSize: "1.2rem" },
+                        }}
+                    >
                         PROMETEOREMITLY
                     </Typography>
                 </Button>
 
-                {/* Opciones de navegación */}
                 {currentUser ? (
                     <>
                         <Button
@@ -49,18 +70,27 @@ const NavBar = () => {
                             onClick={() => navigate("/dashboard")}
                             sx={{
                                 textTransform: "none",
-                                fontSize: "1rem",
-                                "&:hover": { backgroundColor: "#007bff", transition: "0.3s ease" },
+                                fontSize: "1.2rem",
+                                "&:hover": {
+                                    backgroundColor: "#007bff",
+                                    transition: "0.3s ease",
+                                },
+                                '@media (max-width: 768px)': { fontSize: "1rem" },
+                                '@media (max-width: 480px)': { fontSize: "0.9rem" },
                             }}
                         >
                             Dashboard
                         </Button>
 
-                        {/* Menú desplegable con opciones de usuario */}
                         <Button
                             color="inherit"
                             onClick={handleMenu}
-                            sx={{ ml: 2, textTransform: "none", fontSize: "1rem", color: "#fff" }}
+                            sx={{
+                                ml: 2,
+                                textTransform: "none",
+                                fontSize: "1.2rem",
+                                color: "#fff",
+                            }}
                         >
                             Opciones
                         </Button>
@@ -89,9 +119,14 @@ const NavBar = () => {
                             onClick={() => navigate("/signup")}
                             sx={{
                                 textTransform: "none",
-                                fontSize: "1rem",
+                                fontSize: "1.2rem",
                                 marginRight: "1rem",
-                                "&:hover": { backgroundColor: "#007bff", transition: "0.3s ease" },
+                                "&:hover": {
+                                    backgroundColor: "#007bff",
+                                    transition: "0.3s ease",
+                                },
+                                '@media (max-width: 768px)': { fontSize: "1rem" },
+                                '@media (max-width: 480px)': { fontSize: "0.9rem" },
                             }}
                         >
                             Registrarse
@@ -101,8 +136,13 @@ const NavBar = () => {
                             onClick={() => navigate("/signin")}
                             sx={{
                                 textTransform: "none",
-                                fontSize: "1rem",
-                                "&:hover": { backgroundColor: "#007bff", transition: "0.3s ease" },
+                                fontSize: "1.2rem",
+                                "&:hover": {
+                                    backgroundColor: "#007bff",
+                                    transition: "0.3s ease",
+                                },
+                                '@media (max-width: 768px)': { fontSize: "1rem" },
+                                '@media (max-width: 480px)': { fontSize: "0.9rem" },
                             }}
                         >
                             Iniciar sesión
@@ -115,10 +155,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-
-
-
-
-
-
