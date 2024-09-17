@@ -1,4 +1,4 @@
-.user-profile-container {
+.container {
     padding: 2rem;
     background-color: rgba(34, 34, 34, 0.8);
     border-radius: 10px;
@@ -6,16 +6,15 @@
     width: 80%;
     max-width: 400px;
     margin: 0 auto;
-    /* Centrar el contenedor */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.user-profile-container:hover {
+.container:hover {
     background-color: rgba(34, 34, 34, 0.9);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-.user-info {
+.info {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -25,32 +24,30 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.user-info:hover {
+.info:hover {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
-    .user-profile-container {
+    .container {
         width: 90%;
         padding: 1.5rem;
     }
 
-    .user-info {
+    .info {
         padding: 8px;
     }
 }
 
 @media (max-width: 480px) {
-    .user-profile-container {
+    .container {
         width: 95%;
         padding: 1.2rem;
     }
 
-    .user-info {
+    .info {
         padding: 7px;
         font-size: 0.9rem;
-        /* Reducir el tamaño del texto para pantallas pequeñas */
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Alert } from 'reactstrap'; // Importa Alert para manejar errores visuales
-import '../styles/SignIn.css';
+import styles from '../styles/SignIn.module.css'; // Importa el CSS module
 import CustomButton from './CustomButton/CustomButton';
 import { useAuth } from '../components/AuthContext'; // Importa el contexto de autenticación
 
@@ -28,47 +28,47 @@ const SignIn = () => {
     };
 
     return (
-        <div className="container">
-            <h1 className="title">PROMETEO</h1>
-            <div className="signin-form">
+        <div className={styles.container}>
+            <h1 className={styles.title}>PROMETEO</h1>
+            <div className={styles.signinForm}>
                 <h2>Iniciar sesión</h2>
 
                 {/* Mostrar alerta en caso de error */}
                 {error && <Alert color="danger">{error}</Alert>}
 
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
                         <input
                             name="email"
                             type="email"
                             id="email"
-                            className="form-control input-field"
+                            className={`${styles.formControl} ${styles.inputField}`}
                             placeholder="Correo electrónico"
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                             required
                         />
-                        <label htmlFor="email" className="input-label">Correo electrónico</label>
+                        <label htmlFor="email" className={styles.inputLabel}>Correo electrónico</label>
                     </div>
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
                         <input
                             name="password"
                             type="password"
                             id="password"
-                            className="form-control input-field"
+                            className={`${styles.formControl} ${styles.inputField}`}
                             placeholder="Contraseña"
                             minLength="8"
                             required
                         />
-                        <label htmlFor="password" className="input-label">Contraseña</label>
+                        <label htmlFor="password" className={styles.inputLabel}>Contraseña</label>
                     </div>
                     <CustomButton variant="contained" type="submit">
                         Iniciar sesión
                     </CustomButton>
                 </form>
-                <p className="forgot-password">
+                <p className={styles.forgotPassword}>
                     <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
                 </p>
-                <p className="signup-link">
+                <p className={styles.signupLink}>
                     ¿No tienes una cuenta? <Link to="/signup">Regístrate</Link>
                 </p>
             </div>
@@ -77,7 +77,3 @@ const SignIn = () => {
 };
 
 export default SignIn;
-
-
-
-

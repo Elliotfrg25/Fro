@@ -1,4 +1,4 @@
-.notification-container {
+.notificationContainer {
     padding: 2rem;
     background-color: rgba(34, 34, 34, 0.8);
     border-radius: 10px;
@@ -8,7 +8,7 @@
     margin: 0 auto;
 }
 
-.notification-item {
+.notificationItem {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
     border-color: rgba(255, 255, 255, 0.2);
@@ -18,7 +18,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.notification-item:hover {
+.notificationItem:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -26,23 +26,23 @@
 
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
-    .notification-container {
+    .notificationContainer {
         width: 90%;
         padding: 1.5rem;
     }
 
-    .notification-item {
+    .notificationItem {
         padding: 8px;
     }
 }
 
 @media (max-width: 480px) {
-    .notification-container {
+    .notificationContainer {
         width: 100%;
         padding: 1rem;
     }
 
-    .notification-item {
+    .notificationItem {
         padding: 6px;
         font-size: 0.9rem;
     }

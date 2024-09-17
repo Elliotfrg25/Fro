@@ -38,4 +38,4 @@ const ThirdPartyIntegration = () => {
     );
 };
 
-export default ThirdPartyIntegration;
+export default ThirdPartyIntegration; 

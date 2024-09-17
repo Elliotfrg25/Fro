@@ -1,4 +1,4 @@
-@import './SignIn.css';
+@import './SignIn.module.css';
 
 .transaction-history {
     background-color: rgba(34, 34, 34, 0.8);
@@ -80,4 +80,4 @@
         font-size: 0.85rem;
         /* Ajuste del tamaño del texto en pantallas pequeñas */
     }
-}
+} 

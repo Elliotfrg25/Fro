@@ -1,12 +1,11 @@
 import { useState } from "react";
-import  Button  from "./ui/Button";
-import  Input  from "./ui/Input";
+import Button from "./ui/Button";
+import Input from "./ui/Input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/Select";
 import { ArrowRightLeft } from "lucide-react";
-import '../styles/CurrencyConverter.css';
+import styles from '../styles/CurrencyConverter.module.css'; // Importando el CSS module
 
 
-// Simulación de tasas de cambio (en una app real, estos vendrían de una API)
 const exchangeRates = {
     USD: 1,
     EUR: 0.85,
@@ -20,15 +19,14 @@ function CurrencyConverter() {
     const [fromCurrency, setFromCurrency] = useState("USD");
     const [toCurrency, setToCurrency] = useState("EUR");
     const [result, setResult] = useState("");
-    const [error, setError] = useState(""); // Para manejar errores
+    const [error, setError] = useState("");
 
-    // Función de conversión de divisas
     const handleConvert = () => {
         if (isNaN(parseFloat(amount)) || parseFloat(amount) <= 0) {
             setError("Please enter a valid amount greater than 0.");
             return;
         }
-        setError(""); // Limpiar el error si el valor es válido
+        setError("");
 
         const fromRate = exchangeRates[fromCurrency];
         const toRate = exchangeRates[toCurrency];
@@ -36,7 +34,6 @@ function CurrencyConverter() {
         setResult(convertedAmount.toFixed(2));
     };
 
-    // Función para intercambiar las monedas
     const handleSwap = () => {
         const tempCurrency = fromCurrency;
         setFromCurrency(toCurrency);
@@ -44,9 +41,9 @@ function CurrencyConverter() {
     };
 
     return (
-        <div className="currency-converter-container">
-            <h2 className="text-2xl font-bold mb-6 text-center">Currency Converter</h2>
-            <div className="space-y-4">
+        <div className={styles.currencyConverterContainer}>
+            <h2 className={styles.text2xl}>Currency Converter</h2>
+            <div className={styles.spaceY4}>
                 <div>
                     <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-1">
                         Amount
@@ -59,9 +56,9 @@ function CurrencyConverter() {
                         placeholder="Enter amount"
                         aria-label="Amount to convert"
                     />
-                    {error && <p className="text-red-500 text-sm mt-2">{error}</p>} {/* Mostrar error si lo hay */}
+                    {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className={styles.currencySelectContainer}>
                     <div className="flex-1">
                         <label htmlFor="fromCurrency" className="block text-sm font-medium text-gray-700 mb-1">
                             From
@@ -104,8 +101,8 @@ function CurrencyConverter() {
                     Convert
                 </Button>
                 {result && (
-                    <div className="mt-4 p-4 bg-gray-100 rounded-md">
-                        <p className="text-lg font-semibold text-center">
+                    <div className={styles.resultContainer}>
+                        <p>
                             {amount} {fromCurrency} = {result} {toCurrency}
                         </p>
                     </div>

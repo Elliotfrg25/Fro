@@ -1,6 +1,6 @@
 // src/components/TransactionHistory.js
 import React, { useState } from 'react';
-import '../styles/TransactionHistory.css';
+import '../styles/TransactionHistory.module.css';
 
 const sampleTransactions = [
     {

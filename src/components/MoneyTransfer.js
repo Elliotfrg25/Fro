@@ -1,44 +1,42 @@
-// src/components/MoneyTransfer.js
 import React from 'react';
-import '../styles/MoneyTransfer.css';
+import styles from '../styles/MoneyTransfer.module.css';
 
 const MoneyTransfer = () => {
     const handleTransfer = (e) => {
         e.preventDefault();
-        // Aquí puedes agregar la lógica de transferencia de dinero
         console.log("Transferencia confirmada");
     };
 
     return (
-        <div className="container">
-            <h1 className="title">PROMETEO</h1>
-            <div className="transfer-form">
+        <div className={styles.container}>
+            <h1 className={styles.title}>PROMETEO</h1>
+            <div className={styles.transferForm}>
                 <h2>Transferencia de dinero</h2>
                 <form onSubmit={handleTransfer}>
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
                         <input
                             type="number"
-                            className="form-control"
+                            className={styles.formControl}
                             placeholder="Monto"
                             required
                         />
                     </div>
-                    <div className="form-group">
-                        <select className="form-control" required>
+                    <div className={styles.formGroup}>
+                        <select className={styles.formControl} required>
                             <option value="">Seleccionar moneda</option>
                             <option value="COP">Pesos Colombianos (COP)</option>
                             <option value="USD">Dólares Americanos (USD)</option>
                         </select>
                     </div>
-                    <div className="form-group">
+                    <div className={styles.formGroup}>
                         <input
                             type="text"
-                            className="form-control"
+                            className={styles.formControl}
                             placeholder="Dirección de destino"
                             required
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className={styles.btnPrimary}>
                         Confirmar transferencia
                     </button>
                 </form>

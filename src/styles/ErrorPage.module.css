@@ -1,4 +1,4 @@
-.error-container {
+.errorContainer {
     text-align: center;
     padding: 50px;
     background-color: rgba(34, 34, 34, 0.8);
@@ -9,32 +9,45 @@
 }
 
 /* Estilos para el mensaje de error */
-.error-message {
+.errorMessage {
     font-size: 24px;
     color: #d9534f;
     margin-bottom: 20px;
 }
 
+/* Estilo para el enlace a la página principal */
+.homeLink {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.homeLink:hover {
+    text-decoration: underline;
+}
+
 /* Responsividad para pantallas pequeñas (menos de 768px) */
 @media (max-width: 768px) {
-    .error-container {
+    .errorContainer {
         padding: 30px;
         max-width: 90%;
     }
 
-    .error-message {
+    .errorMessage {
         font-size: 20px;
     }
 }
 
 /* Responsividad adicional para pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
-    .error-container {
+    .errorContainer {
         padding: 20px;
         max-width: 100%;
     }
 
-    .error-message {
+    .errorMessage {
         font-size: 18px;
     }
 }

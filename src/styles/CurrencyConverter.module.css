@@ -1,45 +1,36 @@
-.currency-converter-container {
+.currencyConverterContainer {
     background-color: #fff;
-    /* Fondo blanco */
     padding: 2rem;
     border: 1px solid black;
-    /* Borde negro añadido */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 350px;
     margin: 2rem auto;
     text-align: center;
 }
 
-.currency-converter-container h2 {
+.currencyConverterContainer h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: black;
-    /* Texto en negro */
 }
 
-.currency-input,
-.currency-select {
+.currencyInput,
+.currencySelect {
     padding: 0.75rem;
     border: 1px solid black;
-    /* Borde negro */
     border-radius: 8px;
     font-size: 1rem;
     width: 100%;
     background-color: #fff;
-    /* Fondo blanco */
     color: black;
-    /* Texto en negro */
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    /* Sombra interior */
 }
 
-.currency-button {
+.currencyButton {
     padding: 0.75rem;
     background-color: #000;
-    /* Fondo negro */
     color: #fff;
-    /* Texto blanco */
     font-size: 1rem;
     border: none;
     border-radius: 8px;
@@ -47,43 +38,36 @@
     transition: background-color 0.3s ease;
 }
 
-.currency-button:hover {
+.currencyButton:hover {
     background-color: #333;
-    /* Oscurecer al hacer hover */
 }
 
-.currency-swap {
+.currencySwap {
     background-color: transparent;
-    /* Fondo transparente */
     color: black;
-    /* Icono en negro */
     padding: 0.5rem;
     border-radius: 50%;
     border: 1px solid black;
-    /* Borde negro */
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.currency-swap:hover {
+.currencySwap:hover {
     transform: rotate(180deg);
-    /* Rotar icono al hacer hover */
 }
 
-.currency-select-container {
+.currencySelectContainer {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
 }
 
-.result-container {
+.resultContainer {
     margin-top: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
     background-color: #fff;
-    /* Fondo blanco para el contenedor de resultados */
     padding: 0.75rem;
     border-radius: 8px;
     color: black;
-    /* Texto en negro */
 }

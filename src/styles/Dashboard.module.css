@@ -1,0 +1,65 @@
+.dashboardContainer {
+    background: linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%);
+    padding: 2.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.balances {
+    margin-bottom: 30px;
+}
+
+.balances p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+.options .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background-color: var(--color-primary);
+    border: none;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.options .btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.options .btn .icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .dashboardContainer {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+}

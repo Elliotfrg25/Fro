@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import '../styles/HomePage.css';
+import styles from '../styles/HomePage.module.css'; // Cambia la importación
 
 const HomePage = () => {
     const [currencies, setCurrencies] = useState([]);
@@ -108,11 +108,11 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className="home-page">
-            <section className="features" ref={(el) => sectionRefs.current[0] = el}>
-                <h2 className="features-title">Nuestros Servicios</h2> {/* Título separado */}
-                <div className="feature-items">
-                    <div className="feature-item">
+        <div className={styles.homePage}> 
+            <section className={styles.features} ref={(el) => sectionRefs.current[0] = el}>
+                <h2 className={styles.featuresTitle}>Nuestros Servicios</h2> {/* Título separado */}
+                <div className={styles.featureItems}>
+                    <div className={styles.featureItems}>
                         <h3>Transferencia Internacional</h3>
                         <p>Envía dinero de manera rápida y segura a cualquier parte del mundo.
                             Con nuestra plataforma, puedes realizar transferencias internacionales con facilidad,
@@ -121,7 +121,7 @@ const HomePage = () => {
                             brindándote total confianza. Ya sea que envíes dinero a tu familia, amigos o socios comerciales,
                             puedes hacerlo con la tranquilidad de que siempre estamos cuidando tus intereses.</p>
                     </div>
-                    <div className="feature-item">
+                    <div className={styles.featureItems}>
                         <h3>Historial de Transacciones</h3>
                         <p>Mantén el control de todas tus operaciones con acceso instantáneo a tu historial de transacciones. Desde tu perfil,
                             puedes revisar fácilmente todos los envíos de dinero realizados,
@@ -129,7 +129,7 @@ const HomePage = () => {
                             Nuestra plataforma organiza de manera clara y detallada tus transacciones para que puedas acceder a esta información cuando la necesites,
                             brindándote transparencia y control total sobre tus movimientos financieros.</p>
                     </div>
-                    <div className="feature-item">
+                    <div className={styles.featureItems}>
                         <h3>Conversión de Moneda</h3>
                         <p>Convierte tu dinero en diferentes monedas al instante y con las mejores tasas de cambio disponibles.
                             Ya no tienes que preocuparte por complicados procesos de conversión;
@@ -140,46 +140,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section className="currency-converter" ref={(el) => sectionRefs.current[1] = el}>
-                <h2>Calculadora de Conversión de Moneda</h2>
-                {loading ? (
-                    <p>Cargando datos de divisas...</p>
-                ) : error ? (
-                    <p>{error}</p>
-                ) : (
-                    <div className="currency-inputs">
-                        <input
-                            type="number"
-                            value={amount}
-                            onChange={e => setAmount(e.target.value)}
-                        />
-                        <select
-                            value={fromCurrency}
-                            onChange={e => setFromCurrency(e.target.value)}
-                        >
-                            {currencies.map(currency => (
-                                <option key={currency} value={currency}>
-                                    {currency}
-                                </option>
-                            ))}
-                        </select>
-                        <span>equivale a</span>
-                        <input type="text" readOnly value={convertedAmount.toFixed(2)} />
-                        <select
-                            value={toCurrency}
-                            onChange={e => setToCurrency(e.target.value)}
-                        >
-                            {currencies.map(currency => (
-                                <option key={currency} value={currency}>
-                                    {currency}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                )}
-            </section>
-
-            <section className="countries-list" ref={(el) => sectionRefs.current[2] = el}>
+            <section className={styles.countriesList} ref={(el) => sectionRefs.current[2] = el}>
                 <h2>Países Disponibles</h2>
                 <ul>
                     {countriesWithFlags.map(country => (
@@ -190,58 +151,46 @@ const HomePage = () => {
                 </ul>
             </section>
 
-            <section className="customer-reviews" ref={(el) => sectionRefs.current[3] = el}>
+            <section className={styles.customerReviews} ref={(el) => sectionRefs.current[3] = el}>
                 <h2>Descubre por qué millones de personas alrededor del mundo confían en PROMETEOREMITLY</h2>
-
-                <div className="review-item">
+                <div className={styles.reviewItem}>
                     <h4>Daniela Rodríguez</h4>
-                    <p>"Estoy muy impresionada con esta aplicación. Las tasas de cambio son muy competitivas y el proceso es súper sencillo.
-                        Mi mamá en Colombia siempre recibe el dinero sin problemas, y la atención al cliente es excelente.
-                        ¡Recomendadísima!"</p>
-                    <div className="stars">★★★★★</div> {/* Añadido las estrellas */}
+                    <p>"Estoy muy impresionada con esta aplicación. Las tasas de cambio son muy competitivas y el proceso es súper sencillo."</p>
+                    <div className={styles.stars}>★★★★★</div>
                 </div>
-
-                <div className="review-item">
+                <div className={styles.reviewItem}>
                     <h4>Carlos Rodríguez</h4>
                     <p>"La mejor forma de enviar dinero internacionalmente. Tarifas bajas y transacciones rápidas."</p>
-                    <div className="stars">★★★★★</div> {/* Añadido las estrellas */}
+                    <div className={styles.stars}>★★★★★</div>
                 </div>
-
-                <div className="review-item">
+                <div className={styles.reviewItem}>
                     <h4>Fernando Lugo</h4>
-                    <p>"¡Excelente aplicación! Enviar dinero a mi familia en Colombia nunca había sido tan fácil.
-                        La transferencia fue rápida y recibieron el dinero en su cuenta bancaria en cuestión de minutos.
-                        Definitivamente la mejor opción para enviar remesas."</p>
-                    <div className="stars">★★★★★</div> {/* Añadido las estrellas */}
+                    <p>"¡Excelente aplicación! Enviar dinero a mi familia en Colombia nunca había sido tan fácil."</p>
+                    <div className={styles.stars}>★★★★★</div>
                 </div>
-
-                <div className="review-item">
+                <div className={styles.reviewItem}>
                     <h4>Nelson Ramirez</h4>
-                    <p>"He probado varias aplicaciones para enviar dinero a Colombia, pero esta es sin duda la mejor.
-                        El servicio es rápido, seguro y confiable.
-                        Además, puedo ver el tipo de cambio en tiempo real y siempre he tenido buenas experiencias con las transferencias."</p>
-                    <div className="stars">★★★★★</div> {/* Añadido las estrellas */}
+                    <p>"He probado varias aplicaciones para enviar dinero a Colombia, pero esta es sin duda la mejor."</p>
+                    <div className={styles.stars}>★★★★★</div>
                 </div>
-
             </section>
 
-
-            <section className="associated-banks" ref={(el) => sectionRefs.current[4] = el}>
+            <section className={styles.associatedBanks} ref={(el) => sectionRefs.current[4] = el}>
                 <h2>Retiro de efectivo y depósito bancario</h2>
-                <div className="bank-logos">
+                <div className={styles.bankLogos}>
                     <img src="ruta/logo-banco1.png" alt="Bancolombia" loading="lazy" />
                     <img src="ruta/logo-banco2.png" alt="DAVIVIENDA" loading="lazy" />
                     <img src="ruta/logo-banco3.png" alt="GRUPO AVAL" loading="lazy" />
                 </div>
             </section>
 
-            <footer className="footer" ref={(el) => sectionRefs.current[5] = el}>
-                <div className="footer-container">
-                    <div className="footer-section">
+            <footer className={styles.footer} ref={(el) => sectionRefs.current[5] = el}>
+                <div className={styles.footerContainer}>
+                    <div className={styles.footerSection}>
                         <h4>Acerca de Nosotros</h4>
                         <p>PROMETEOREMITLY es una plataforma confiable para transferencias de dinero rápidas y seguras.</p>
                     </div>
-                    <div className="footer-section">
+                    <div className={styles.footerSection}>
                         <h4>Enlaces Rápidos</h4>
                         <ul>
                             <li><a href="/about">Sobre Nosotros</a></li>
@@ -250,21 +199,21 @@ const HomePage = () => {
                             <li><a href="/faq">Preguntas Frecuentes</a></li>
                         </ul>
                     </div>
-                    <div className="footer-section">
+                    <div className={styles.footerSection}>
                         <h4>Contacto</h4>
                         <p>Teléfono: +1 234 567 890</p>
                         <p>Email: contacto@prometeo.com</p>
                         <p>Dirección: Calle Falsa 123, Medellin, Colombia</p>
                     </div>
-                    <div className="footer-section">
+                    <div className={styles.footerSection}>
                         <h4>Redes Sociales</h4>
-                        <div className="social-icons">
+                        <div className={styles.socialIcons}>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
                         </div>
                     </div>
-                    <div className="footer-section">
+                    <div className={styles.footerSection}>
                         <h4>Suscríbete a nuestro Boletín</h4>
                         <form>
                             <input type="email" placeholder="Ingresa tu correo electrónico" />
@@ -275,9 +224,10 @@ const HomePage = () => {
                 <p>&copy; 2023 PROMETEO. Todos los derechos reservados.</p>
             </footer>
 
+
         </div>
     );
 };
 
-export default HomePage;
+export default HomePage; 
 

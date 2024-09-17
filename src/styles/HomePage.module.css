@@ -1,5 +1,5 @@
-/* Fondo de la página principal */
-.home-page {
+.homePage {
+    /* Cambiado a camelCase */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,13 +15,13 @@
 }
 
 /* Animación de desvanecimiento suave al hacer scroll */
-section {
+.section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-section.visible {
+.sectionVisible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -39,21 +39,21 @@ section.visible {
     margin-bottom: 4rem;
 }
 
-.features-title {
+.featuresTitle {
     font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: 2rem;
     color: #333;
 }
 
-.feature-items {
+.featureItems {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.feature-item {
+.featureItem {
     flex: 1;
     padding: 2rem;
     background-color: #ffffff;
@@ -65,25 +65,25 @@ section.visible {
     position: relative;
 }
 
-.feature-item:hover {
+.featureItem:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     background-color: #f0f8ff;
 }
 
-.feature-item h3 {
+.featureItem h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
     color: #555;
 }
 
-.feature-item p {
+.featureItem p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
 }
 
-.feature-item img {
+.featureItem img {
     max-width: 40px;
     margin-bottom: 1.5rem;
 }
@@ -112,18 +112,18 @@ button:hover {
         padding: 2rem 0.5rem;
     }
 
-    .feature-item {
+    .featureItem {
         max-width: 100%;
         margin-bottom: 1.5rem;
     }
 
-    .features-title {
+    .featuresTitle {
         font-size: 2rem;
     }
 }
 
 /* Sección del Conversor de Moneda */
-.currency-converter {
+.currencyConverter {
     text-align: center;
     padding: 3rem 1rem;
     background-color: #ffffff;
@@ -134,7 +134,7 @@ button:hover {
     margin-bottom: 2rem;
 }
 
-.currency-inputs {
+.currencyInputs {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,8 +142,8 @@ button:hover {
     margin-top: 2rem;
 }
 
-.currency-inputs input,
-.currency-inputs select {
+.currencyInputs input,
+.currencyInputs select {
     padding: 1rem;
     border-radius: 8px;
     border: 2px solid #0f4c5c;
@@ -155,17 +155,17 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.currency-inputs input:hover,
-.currency-inputs select:hover,
-.currency-inputs input:focus,
-.currency-inputs select:focus {
+.currencyInputs input:hover,
+.currencyInputs select:hover,
+.currencyInputs input:focus,
+.currencyInputs select:focus {
     background-color: #ffffff;
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     outline: none;
 }
 
-button {
+.currencyConverter button {
     padding: 0.75rem 1.5rem;
     background-color: #0f4c5c;
     color: white;
@@ -178,18 +178,18 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
+.currencyConverter button:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-button:active {
+.currencyConverter button:active {
     transform: translateY(0);
 }
 
 /* Mensaje de equivalencia */
-.currency-converter span {
+.currencyConverter span {
     font-size: 1.5rem;
     margin: 1rem 0;
     color: #0f4c5c;
@@ -197,7 +197,7 @@ button:active {
 }
 
 /* Sección de Países */
-.countries-list {
+.countriesList {
     text-align: center;
     padding: 3rem 0;
     background-color: #ffffff95;
@@ -205,7 +205,7 @@ button:active {
     margin-bottom: 2rem;
 }
 
-.countries-list ul {
+.countriesList ul {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
@@ -214,7 +214,7 @@ button:active {
     flex-wrap: wrap;
 }
 
-.countries-list li {
+.countriesList li {
     margin: 0.5rem;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
@@ -224,13 +224,13 @@ button:active {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.countries-list li:hover {
+.countriesList li:hover {
     background-color: rgba(0, 123, 255, 0.2);
     transform: scale(1.1);
 }
 
 /* Sección de Reseñas */
-.customer-reviews {
+.customerReviews {
     text-align: center;
     padding: 3rem 1rem;
     background-color: #ffffff95;
@@ -242,7 +242,7 @@ button:active {
     justify-content: space-around;
 }
 
-.review-item {
+.reviewItem {
     margin: 1rem;
     padding: 1.5rem;
     border: 1px solid #e9ecef;
@@ -255,7 +255,7 @@ button:active {
     box-sizing: border-box;
 }
 
-.review-item:hover {
+.reviewItem:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
@@ -267,7 +267,7 @@ button:active {
 }
 
 /* Sección de Bancos Asociados */
-.associated-banks {
+.associatedBanks {
     text-align: center;
     padding: 3rem 1rem;
     background-color: #ffffff95;
@@ -275,14 +275,14 @@ button:active {
     margin-bottom: 2rem;
 }
 
-.bank-logos img {
+.bankLogos img {
     width: 100px;
     margin: 0 1rem;
     filter: grayscale(50%);
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.bank-logos img:hover {
+.bankLogos img:hover {
     filter: grayscale(0%);
     transform: scale(1.1);
 }
@@ -297,7 +297,8 @@ button:active {
     font-size: 0.9rem;
 }
 
-.footer-container {
+.footerContainer {
+    /* Adaptado para CSS Modules */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -307,53 +308,53 @@ button:active {
     gap: 2rem;
 }
 
-.footer-section {
+.footerSection {
     flex: 1;
     min-width: 200px;
 }
 
-.footer-section h4 {
+.footerSection h4 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
-.footer-section ul {
+.footerSection ul {
     list-style-type: none;
     padding: 0;
 }
 
-.footer-section ul li {
+.footerSection ul li {
     margin-bottom: 0.5rem;
 }
 
-.footer-section ul li a {
+.footerSection ul li a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
+.footerSection ul li a:hover {
     color: #007bff;
 }
 
-.social-icons a {
+.socialIcons a {
     display: inline-block;
     margin: 0 1rem;
     color: white;
     text-decoration: none;
 }
 
-.social-icons a:hover {
+.socialIcons a:hover {
     color: #007bff;
 }
 
-.footer-section form {
+.footerSection form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.footer-section form input {
+.footerSection form input {
     padding: 0.5rem;
     border-radius: 5px;
     border: none;
@@ -362,7 +363,7 @@ button:active {
     max-width: 250px;
 }
 
-.footer-section form button {
+.footerSection form button {
     padding: 0.5rem 1rem;
     background-color: #007bff;
     border: none;
@@ -371,12 +372,12 @@ button:active {
     cursor: pointer;
 }
 
-.footer-section form button:hover {
+.footerSection form button:hover {
     background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
-    .footer-container {
+    .footerContainer {
         flex-direction: column;
         text-align: center;
     }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container, Row, Col, Alert } from 'reactstrap'; // Import Alert para mostrar errores
-import '../styles/SignUp.css';
+import '../styles/SignUp.module.css';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../API/api'; // Asegúrate de que la ruta sea correcta
 

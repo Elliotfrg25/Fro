@@ -1,7 +1,4 @@
-@import './SignIn.css';
-
-/* Estilos para el formulario de transferencia */
-.transfer-form {
+.transferForm {
     background-color: rgba(34, 34, 34, 0.9);
     padding: 2.5rem;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
@@ -12,8 +9,7 @@
     margin: 0 auto;
 }
 
-/* Título del formulario */
-.transfer-form h2 {
+.transferForm h2 {
     margin-bottom: 2rem;
     color: var(--color-primary);
     font-size: 2rem;
@@ -21,14 +17,12 @@
     font-weight: bold;
 }
 
-/* Contenedor de los grupos de formulario */
-.form-group {
+.formGroup {
     margin-bottom: 20px;
     text-align: left;
 }
 
-/* Estilo para los campos de entrada */
-.transfer-form input {
+.transferForm input {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
@@ -40,15 +34,14 @@
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-.transfer-form input:focus {
+.transferForm input:focus {
     background-color: rgba(255, 255, 255, 0.2);
     border-color: var(--color-primary);
     outline: none;
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
 }
 
-/* Estilo del botón */
-.transfer-form .btn-primary {
+.btnPrimary {
     width: 100%;
     padding: 0.75rem 1.5rem;
     background-color: var(--color-primary);
@@ -62,54 +55,47 @@
     margin-top: 1rem;
 }
 
-.transfer-form .btn-primary:hover {
+.btnPrimary:hover {
     background-color: var(--color-secondary);
     transform: translateY(-3px);
 }
 
-.form-group button {
-    display: inline-block;
-    margin: 0 auto;
-}
-
-/* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
-    .transfer-form {
+    .transferForm {
         width: 90%;
         padding: 1.5rem;
     }
 
-    .transfer-form h2 {
+    .transferForm h2 {
         font-size: 1.8rem;
     }
 
-    .transfer-form input {
+    .transferForm input {
         font-size: 0.9rem;
     }
 
-    .transfer-form .btn-primary {
+    .btnPrimary {
         font-size: 1rem;
         padding: 0.7rem 1.2rem;
     }
 }
 
-/* Ajustes adicionales para pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
-    .transfer-form {
+    .transferForm {
         padding: 1.2rem;
         width: 100%;
     }
 
-    .transfer-form h2 {
+    .transferForm h2 {
         font-size: 1.6rem;
     }
 
-    .transfer-form input {
+    .transferForm input {
         font-size: 0.85rem;
         padding: 0.65rem 0.8rem;
     }
 
-    .transfer-form .btn-primary {
+    .btnPrimary {
         font-size: 0.9rem;
         padding: 0.6rem 1rem;
     }

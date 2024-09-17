@@ -1,28 +1,28 @@
 import React from 'react';
+import styles from '../styles/ErrorPage.module.css'; // Importar el archivo CSS Module
 
 const ErrorPage = () => {
-    // Simulando un código de error (en la práctica, esto podría ser pasado como un prop o extraído de la URL)
-    const errorCode = '404'; // Cambiar según sea necesario
+    const errorCode = '404'; // Puedes cambiar el código de error si es necesario
 
     return (
-        <div className="error-page">
+        <div className={styles.errorContainer}>
             {errorCode === '404' ? (
                 <div>
-                    <h2>Error 404: Página No Encontrada</h2>
+                    <h2 className={styles.errorMessage}>Error 404: Página No Encontrada</h2>
                     <p>Lo sentimos, la página que estás buscando no existe.</p>
-                    <a href="/">Ir a la página principal</a>
+                    <a href="/" className={styles.homeLink}>Ir a la página principal</a>
                 </div>
             ) : errorCode === '500' ? (
                 <div>
-                    <h2>Error 500: Error Interno del Servidor</h2>
+                    <h2 className={styles.errorMessage}>Error 500: Error Interno del Servidor</h2>
                     <p>Lo sentimos, algo salió mal en nuestro lado. Por favor, intenta de nuevo más tarde.</p>
-                    <a href="/">Ir a la página principal</a>
+                    <a href="/" className={styles.homeLink}>Ir a la página principal</a>
                 </div>
             ) : (
                 <div>
-                    <h2>Error Desconocido</h2>
+                    <h2 className={styles.errorMessage}>Error Desconocido</h2>
                     <p>Lo sentimos, ha ocurrido un error desconocido. Por favor, intenta de nuevo más tarde.</p>
-                    <a href="/">Ir a la página principal</a>
+                    <a href="/" className={styles.homeLink}>Ir a la página principal</a>
                 </div>
             )}
         </div>
@@ -30,4 +30,3 @@ const ErrorPage = () => {
 };
 
 export default ErrorPage;
-

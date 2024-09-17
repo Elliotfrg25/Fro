@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
+import styles from '../styles/Reports.module.css'; // Importa el CSS module
 
 const Reports = () => {
     // Datos de ejemplo para el gráfico de historial de transacciones
@@ -26,17 +27,15 @@ const Reports = () => {
     };
 
     return (
-        <div className="reports">
+        <div className={styles.reportsContainer}>
             <h2>Reportes y Gráficos</h2>
-            <div className="transaction-history">
+            <div className={styles.transactionHistory}>
                 <h3>Historial de Transacciones</h3>
                 <Bar data={transactionData} />
-                {/* Aquí puedes agregar opciones de filtro */}
             </div>
-            <div className="token-balance">
+            <div className={styles.tokenBalance}>
                 <h3>Balance de Tokens</h3>
                 <Doughnut data={tokenData} />
-                {/* Aquí puedes agregar opciones de filtro */}
             </div>
         </div>
     );

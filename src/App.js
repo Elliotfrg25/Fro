@@ -1,4 +1,4 @@
-// App.js
+// src/App.js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from './components/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
@@ -21,21 +21,20 @@ import ThirdPartyIntegration from "./components/ThirdPartyIntegration";
 import UserProfile from "./components/UserProfile";
 import BankAccounts from "./components/BankAccounts";
 
+import styles from './App.module.css'; // Importa el CSS modular
+
 function App() {
   const isAuthenticated = !!localStorage.getItem('token'); // Simula el estado de autenticación
 
   return (
     <Router>
       <AuthProvider>
-        {/* Movemos el NavBar fuera del contenedor .App */}
         <NavBar />
-        {/* Agregamos el contenedor .App para el resto del contenido */}
-        <div className="App">
+        <div className={styles.App}>  {/* Usando el estilo modular */}
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-
             {/* Rutas protegidas */}
             <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
               <Route path="/dashboard" element={<Dashboard />} />
@@ -44,7 +43,6 @@ function App() {
               <Route path="/notifications" element={<NotificationSystem />} />
               <Route path="/reports" element={<Reports />} />
             </Route>
-
             {/* Otras rutas */}
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/currency-converter" element={<CurrencyConverter />} />

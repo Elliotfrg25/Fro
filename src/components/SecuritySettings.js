@@ -1,7 +1,5 @@
-//src/components/SecuritySettings.js
-
 import React, { useState } from 'react';
-import '../styles/SecuritySettings.css';
+import styles from '../styles/SecuritySettings.module.css'; // Importa el CSS module
 
 const Settings = () => {
     const [twoFactorAuth, setTwoFactorAuth] = useState(false);
@@ -10,7 +8,6 @@ const Settings = () => {
         setTwoFactorAuth(e.target.checked);
     };
 
-    // Simulando preguntas de seguridad y actividad reciente (en una aplicación real, esto podría venir de una base de datos o API)
     const [securityQuestions, setSecurityQuestions] = useState([
         { question: '¿Cuál es el nombre de tu primera mascota?', answer: '' },
         { question: '¿Cuál es tu ciudad natal?', answer: '' },
@@ -21,7 +18,6 @@ const Settings = () => {
         { type: 'Cambio de contraseña', location: 'Nueva York, NY', date: '2023-07-28' },
     ];
 
-    // Manejar el cambio en las respuestas a las preguntas de seguridad
     const handleSecurityAnswerChange = (index, value) => {
         const newQuestions = [...securityQuestions];
         newQuestions[index].answer = value;
@@ -29,11 +25,11 @@ const Settings = () => {
     };
 
     return (
-        <div className="container">
-            <h1 className="title">PROMETEO</h1>
-            <div className="settings">
+        <div className={styles.container}>
+            <h1 className={styles.title}>PROMETEO</h1>
+            <div className={styles.settings}>
                 <h2>Configuración</h2>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label htmlFor="two-factor-auth">Autenticación de dos factores</label>
                     <input
                         id="two-factor-auth"
@@ -42,29 +38,34 @@ const Settings = () => {
                         onChange={handleTwoFactorAuthChange}
                     />
                 </div>
-                <div className="settings-option">
-                    <button className="btn btn-primary">Vincular cuenta bancaria o tarjeta</button>
+                <div className={styles.settingsOption}>
+                    <button className={styles.btnPrimary}>Vincular cuenta bancaria o tarjeta</button>
                 </div>
-                <div className="settings-option">
-                    <button className="btn btn-primary">Administrar tokens virtuales</button>
+                <div className={styles.settingsOption}>
+                    <button className={styles.btnPrimary}>Administrar tokens virtuales</button>
                 </div>
-                <div className="settings-option">
-                    <button className="btn btn-primary">Cambiar idioma</button>
+                <div className={styles.settingsOption}>
+                    <button className={styles.btnPrimary}>Cambiar idioma</button>
                 </div>
 
                 {/* Sección de Configuraciones de Seguridad */}
-                <div className="security-settings">
+                <div className={styles.securitySettings}>
                     <h2>Configuraciones de Seguridad</h2>
-                    <div className="security-questions">
+                    <div className={styles.securityQuestions}>
                         <h3>Preguntas de Seguridad</h3>
                         {securityQuestions.map((question, index) => (
                             <div key={index}>
                                 <p>{question.question}</p>
-                                <input type="text" placeholder="Respuesta" value={question.answer} onChange={(e) => handleSecurityAnswerChange(index, e.target.value)} />
+                                <input
+                                    type="text"
+                                    placeholder="Respuesta"
+                                    value={question.answer}
+                                    onChange={(e) => handleSecurityAnswerChange(index, e.target.value)}
+                                />
                             </div>
                         ))}
                     </div>
-                    <div className="recent-activity">
+                    <div className={styles.recentActivity}>
                         <h3>Actividad Reciente</h3>
                         {recentActivity.map((activity, index) => (
                             <div key={index}>
@@ -72,10 +73,9 @@ const Settings = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="security-alerts">
+                    <div className={styles.securityAlerts}>
                         <h3>Alertas de Seguridad</h3>
                         <p>Notificaciones de inicio de sesión desde nuevas ubicaciones: Activado</p>
-                        {/* Aquí se podrían agregar más configuraciones y alertas */}
                     </div>
                 </div>
             </div>
