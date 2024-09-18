@@ -21,7 +21,9 @@ import ThirdPartyIntegration from "./components/ThirdPartyIntegration";
 import UserProfile from "./components/UserProfile";
 import BankAccounts from "./components/BankAccounts";
 
+// Importa los estilos
 import styles from './App.module.css'; // Importa el CSS modular
+import './global.css'; // Importa el CSS global
 
 function App() {
   const isAuthenticated = !!localStorage.getItem('token'); // Simula el estado de autenticación

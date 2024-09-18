@@ -6,20 +6,23 @@ class ForgotPassword extends React.Component {
         return (
             <>
                 <div className={styles.container}>
-                    <h1 className={styles.title}>PROMETEO</h1>
                     <div className={styles.forgotPasswordForm}>
-                        <h2>Recuperar contraseña</h2>
+                        <h1 className={styles.title}>Prometeoremitly</h1>
+                        <p className={styles.subtitle}>
+                            Enter your email to recover your password
+                        </p>
                         <form>
                             <div className={styles.formGroup}>
                                 <input
                                     type="email"
+                                    id="email"
                                     className={styles.formControl}
-                                    placeholder="e-mail"
+                                    placeholder="Your email address"
                                     required
                                 />
                             </div>
                             <button type="submit" className={styles.btnPrimary}>
-                                Enviar enlace de recuperación
+                                Recover Password
                             </button>
                         </form>
                     </div>

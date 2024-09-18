@@ -37,7 +37,7 @@ const NavBar = () => {
 
     return (
         <AppBar
-            position="static"
+            position="fixed"
             sx={{
                 width: '100%',
                 maxWidth: 'none', // Aseguramos que el AppBar ocupe todo el ancho

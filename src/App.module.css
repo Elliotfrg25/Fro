@@ -1,14 +1,21 @@
 /* App.module.css */
 
-/* Estilos globales para .App */
+/* Estilos globales para el contenedor de la aplicación */
 .App {
-  background-color: #20232a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Ocupar la altura completa de la ventana */
+  background-color: #ffffff;
+  /* Fondo blanco */
 }
 
+/* Contenedor de contenido */
 .App-content {
+  margin-top: 64px;
+  /* Asegura que el contenido no quede detrás del NavBar */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -27,18 +34,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 20px;
 }
 
 .App-link {
