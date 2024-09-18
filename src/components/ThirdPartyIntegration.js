@@ -1,36 +1,34 @@
 import React, { useState } from 'react';
+import styles from '../styles/ThirdPartyIntegration.module.css'; // Usar CSS modules para los estilos
 
 const ThirdPartyIntegration = () => {
-    // Estado para manejar la conexión con bancos y proveedores de criptomonedas
     const [connections, setConnections] = useState({
         bank: false,
         cryptoWallet: false,
     });
 
-    // Manejar la conexión/desconexión con bancos
     const handleBankConnection = () => {
-        // Aquí puedes agregar la lógica para conectar con el banco (por ejemplo, abrir una ventana de autenticación OAuth)
         setConnections({ ...connections, bank: !connections.bank });
     };
 
-    // Manejar la conexión/desconexión con proveedores de criptomonedas
     const handleCryptoConnection = () => {
-        // Aquí puedes agregar la lógica para conectar con el proveedor de criptomonedas (por ejemplo, abrir una ventana de autenticación OAuth)
         setConnections({ ...connections, cryptoWallet: !connections.cryptoWallet });
     };
 
     return (
-        <div className="third-party-integration">
-            <h2>Integración con Servicios de Terceros</h2>
-            <div className="bank-connection">
+        <div className={styles.integrationContainer}>
+            <h2 className={styles.title}>Integración con Servicios de Terceros</h2>
+
+            <div className={styles.integrationItem}>
                 <h3>Conexión con Bancos</h3>
-                <button onClick={handleBankConnection}>
+                <button className={styles.integrationButton} onClick={handleBankConnection}>
                     {connections.bank ? 'Desconectar' : 'Conectar'} Cuenta Bancaria
                 </button>
             </div>
-            <div className="crypto-connection">
+
+            <div className={styles.integrationItem}>
                 <h3>Conexión con Proveedores de Criptomonedas</h3>
-                <button onClick={handleCryptoConnection}>
+                <button className={styles.integrationButton} onClick={handleCryptoConnection}>
                     {connections.cryptoWallet ? 'Desconectar' : 'Conectar'} Billetera de Criptomonedas
                 </button>
             </div>
@@ -38,4 +36,4 @@ const ThirdPartyIntegration = () => {
     );
 };
 
-export default ThirdPartyIntegration; 
+export default ThirdPartyIntegration;

@@ -32,34 +32,34 @@ const UserProfile = () => {
                         name="name"
                         value={userInfo.name}
                         onChange={handleChange}
-                        className={styles.info}
+                        className={styles.input}
                     />
                     <input
                         type="email"
                         name="email"
                         value={userInfo.email}
                         onChange={handleChange}
-                        className={styles.info}
+                        className={styles.input}
                     />
                     <input
                         type="tel"
                         name="phone"
                         value={userInfo.phone}
                         onChange={handleChange}
-                        className={styles.info}
+                        className={styles.input}
                     />
-                    <button onClick={handleSave}>Guardar</button>
+                    <button className={styles.buttonPrimary} onClick={handleSave}>Guardar</button>
                 </div>
             ) : (
                 <div>
                     <p className={styles.info}>Nombre: {userInfo.name}</p>
                     <p className={styles.info}>Correo electrónico: {userInfo.email}</p>
                     <p className={styles.info}>Teléfono: {userInfo.phone}</p>
-                    <button onClick={handleEdit}>Editar</button>
+                    <button className={styles.buttonPrimary} onClick={handleEdit}>Editar</button>
                 </div>
             )}
             <div>
-                <button>Cambiar contraseña</button>
+                <button className={styles.buttonSecondary}>Cambiar contraseña</button>
             </div>
         </div>
     );

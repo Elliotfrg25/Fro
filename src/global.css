@@ -1,12 +1,10 @@
-/* global.css */
-
 html,
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* Asegura que el cuerpo de la página ocupe el 100% de la pantalla */
     background-color: #ffffff;
-    /* Asegura un fondo blanco en toda la aplicación */
     font-family: 'Roboto', sans-serif;
+    color: black;
+    /* Asegura que el color predeterminado del texto sea negro */
 }

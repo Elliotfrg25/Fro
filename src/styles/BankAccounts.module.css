@@ -1,13 +1,13 @@
 .bankAccounts {
     padding: 2rem;
-    background: linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%);
-    border-radius: 10px;
+    border: 1px solid black;
+    background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80%;
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
-    color: var(--color-text);
+    color: black;
 }
 
 /* Media query para pantallas pequeñas */
@@ -20,8 +20,9 @@
 
 .bankAccountItem {
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--color-text);
-    border-color: rgba(255, 255, 255, 0.2);
+    color: black;
+    border: 1px solid black;
+    border-color: black;
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 5px;
@@ -44,8 +45,9 @@
 }
 
 .bankAccountItem button {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
+    background-color: black;
+    border: 1px solid black;
+    border-color: black;
     color: var(--color-text);
     padding: 0.3rem 0.6rem;
     border-radius: 3px;
@@ -55,7 +57,7 @@
 
 .bankAccountItem button:hover {
     background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
+    border-color: black;
 }
 
 .bankAccountForm {
@@ -84,8 +86,9 @@
 }
 
 .bankAccountForm button {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
+    background-color: black;
+    border: 1px solid black;
+    border-color: black;
     color: var(--color-text);
     padding: 0.3rem 0.6rem;
     border-radius: 3px;
@@ -95,7 +98,8 @@
 
 .bankAccountForm button:hover {
     background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
+    border: 1px solid black;
+    border-color: black;
 }
 
 /* Ajuste general para pantallas pequeñas */
@@ -112,4 +116,4 @@
     .bankAccountItem button {
         padding: 0.2rem 0.4rem;
     }
-}
+} 
