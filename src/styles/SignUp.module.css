@@ -1,161 +1,119 @@
-/* Variables de color */
-:root {
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #f1c40f;
-    --color-bg: #222;
-    --color-text: #f4f4f4;
+/* Ajuste general del contenedor */
+.signupContainer {
+    background-color: #fff;
+    /* Fondo blanco */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Estilos del formulario de registro */
-.signup-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(34, 34, 34, 0.9);
+/* Estilo del formulario */
+.signupForm {
+    background-color: #fff;
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     width: 100%;
-    max-width: 450px;
     box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
 }
 
-/* Estilo del título del formulario */
-.signup-form h2 {
+/* Título del formulario */
+.signupForm h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Subtítulo del formulario */
+.signupForm p.subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Grupo de formularios */
+.formGroup {
     margin-bottom: 1.5rem;
-    color: var(--color-primary);
-    text-align: center;
+    position: relative;
 }
 
-/* Estilo del enlace de inicio de sesión */
-.signup-form p.signin-link {
-    margin-top: 1rem;
-    color: var(--color-accent);
-    text-align: center;
-}
-
-.signup-form p.signin-link a {
-    color: var(--color-secondary);
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.signup-form p.signin-link a:hover {
-    color: var(--color-accent);
-    text-decoration: underline;
-}
-
-/* Estilo para los campos de entrada */
-.form-group input {
+/* Campos de entrada */
+.inputField {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--color-primary);
-    color: var(--color-text);
     padding: 1rem;
-    padding-top: 1.5rem;
+    /* Aumenta el padding */
+    border: 1px solid #ddd;
     border-radius: 5px;
-    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    font-size: 1rem;
     box-sizing: border-box;
-    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-/* Placeholder transparente */
-.form-group input::placeholder {
-    color: transparent;
+/* Efecto al enfocar el campo */
+.inputField:focus {
+    border-color: #333;
+    /* Cambia el color del borde al enfocar */
+    outline: none;
 }
 
-/* Estilo para las etiquetas */
-.form-group label {
+/* Estilo de las etiquetas */
+.inputLabel {
     position: absolute;
-    left: 1rem;
-    top: 1.5rem;
-    background-color: transparent;
-    color: var(--color-text);
-    transition: 0.3s ease;
-    padding: 0 0.25rem;
+    top: 0;
+    left: 10px;
+    padding: 0 5px;
+    background-color: #fff;
+    transition: all 0.2s ease;
     font-size: 1rem;
+    color: black;
     pointer-events: none;
 }
 
-/* Etiqueta flotante cuando el campo está en foco o con texto */
-.form-group input:focus+label,
-.form-group input:not(:placeholder-shown)+label {
-    top: -0.75rem;
-    left: 1rem;
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: var(--color-primary);
-    background-color: rgba(34, 34, 34, 0.9);
-    padding: 0 0.25rem;
-    z-index: 1;
+/* Mover la etiqueta cuando el input está lleno o enfocado */
+.inputField:focus+.inputLabel,
+.inputField:not(:placeholder-shown)+.inputLabel {
+    top: -12px;
+    left: 10px;
+    font-size: 0.75rem;
+    color: #333;
+    background-color: #fff;
 }
 
-/* Borde y sombra del input cuando está enfocado */
-.form-group input:focus {
-    border-color: var(--color-secondary);
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
-}
-
-/* Botón de envío */
-.form-group button {
+/* Botón de registro */
+.buttonPrimary {
     width: 100%;
-    padding: 1rem;
-    background-color: var(--color-primary);
+    padding: 0.75rem;
+    background-color: #000;
+    /* Fondo negro */
     color: #fff;
+    /* Texto blanco */
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.form-group button:hover {
-    background-color: var(--color-secondary);
-    transform: translateY(-3px);
+.buttonPrimary:hover {
+    background-color: #333;
+    /* Oscurecer el botón en hover */
 }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .signup-form {
-        width: 90%;
-        padding: 1.5rem;
-    }
-
-    .signup-form h2 {
-        font-size: 1.8rem;
-    }
-
-    .form-group input {
-        font-size: 0.9rem;
-    }
-
-    .form-group button {
-        font-size: 1rem;
-    }
+/* Enlace de inicio de sesión */
+.signupLink {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
-/* Estilos para pantallas muy pequeñas (menos de 480px) */
-@media (max-width: 480px) {
-    .signup-form {
-        padding: 1.2rem;
-        width: 95%;
-    }
+.signupLink a {
+    color: #000;
+    text-decoration: none;
+}
 
-    .signup-form h2 {
-        font-size: 1.6rem;
-    }
-
-    .form-group input {
-        font-size: 0.85rem;
-        padding: 0.8rem;
-    }
-
-    .form-group button {
-        font-size: 0.9rem;
-        padding: 0.8rem;
-    }
-} 
+.signupLink a:hover {
+    text-decoration: underline;
+}

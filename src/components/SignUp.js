@@ -1,30 +1,49 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Container, Row, Col, Alert } from 'reactstrap'; // Import Alert para mostrar errores
-import '../styles/SignUp.module.css';
+import { Button, Form, FormGroup, Label, Input, Container, Row, Alert } from 'reactstrap';
+import styles from '../styles/SignUp.module.css';
 import { Link } from 'react-router-dom';
-import { registerUser } from '../API/api'; // Asegúrate de que la ruta sea correcta
+import { registerUser } from '../API/api';
 
 const SignUp = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState(null); // Estado para el manejo de errores
-    const [success, setSuccess] = useState(false); // Estado para mostrar éxito
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    });
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(null); // Resetea el estado de error al intentar registrar
-        setSuccess(false); // Resetea el estado de éxito
+        setError(null);
+        setSuccess(false);
 
-        if (password !== confirmPassword) {
+        if (formData.password !== formData.confirmPassword) {
             setError('Las contraseñas no coinciden');
             return;
         }
 
+        if (formData.password.length < 8) {
+            setError('La contraseña debe tener al menos 8 caracteres');
+            return;
+        }
+
+        setLoading(true);
         try {
-            // Llamada a la función de la API para registrar al usuario
-            const response = await registerUser({ name, email, password });
+            const response = await registerUser({
+                name: formData.name,
+                email: formData.email,
+                password: formData.password
+            });
             if (response.success) {
                 setSuccess(true);
             } else {
@@ -32,88 +51,89 @@ const SignUp = () => {
             }
         } catch (error) {
             setError('Error en el registro: ' + error.message);
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
-        <Container>
-            <Row>
-                <Col xs={{ size: 12 }} sm={{ size: 10, offset: 1 }} md={{ size: 8, offset: 2 }} lg={{ size: 6, offset: 3 }}>
-                    <div className="signup-form">
-                        <h2>Registrarse</h2>
-                        {/* Mostrar alerta en caso de error */}
-                        {error && <Alert color="danger">{error}</Alert>}
-                        {success && <Alert color="success">Usuario registrado con éxito</Alert>}
-                        <Form onSubmit={handleSubmit}>
-                            <FormGroup>
-                                <Label for="name">Nombre</Label>
-                                <Input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    placeholder="Nombre"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    required
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="email">Correo electrónico</Label>
-                                <Input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    placeholder="Correo electrónico"
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" // Validación de correo
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="password">Contraseña</Label>
-                                <Input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    placeholder="Contraseña"
-                                    minLength="8" // Mínimo de 8 caracteres
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="confirmPassword">Confirmar contraseña</Label>
-                                <Input
-                                    type="password"
-                                    name="confirmPassword"
-                                    id="confirmPassword"
-                                    placeholder="Confirmar contraseña"
-                                    minLength="8" // Mismo mínimo para confirmación
-                                    value={confirmPassword}
-                                    onChange={(e) => setConfirmPassword(e.target.value)}
-                                    required
-                                />
-                            </FormGroup>
-                            <Button type="submit" color="primary">
-                                Registrarse
-                            </Button>
-                        </Form>
-                        <p className="signin-link">
-                            ¿Ya tienes una cuenta? <Link to="/signin">Iniciar sesión</Link>
-                        </p>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+    <div className={styles.signupContainer}>
+         <Container className={styles.container}>
+             <Row>
+                 
+                     <div className={styles.signupForm}>
+                         <h2 className={styles.title}>Registrarse</h2>
+                         <p className={styles.subtitle}>Crea una cuenta para usar nuestra aplicación de remesas</p>
+                         {error && <Alert color="danger">{error}</Alert>}
+                         {success && <Alert color="success">Usuario registrado con éxito</Alert>}
+                         <Form onSubmit={handleSubmit}>
+                             <FormGroup className={styles.formGroup}>
+                                 <Input
+                                     type="text"
+                                     name="name"
+                                     id="name"
+                                     className={styles.inputField}
+                                     placeholder=" "
+                                     value={formData.name}
+                                     onChange={handleChange}
+                                     required
+                                 />
+                                 <Label for="name" className={styles.inputLabel}>Nombre</Label>
+                             </FormGroup>
+                             <FormGroup className={styles.formGroup}>
+                                 <Input
+                                     type="email"
+                                     name="email"
+                                     id="email"
+                                     className={styles.inputField}
+                                     placeholder=" "
+                                     value={formData.email}
+                                     onChange={handleChange}
+                                     required
+                                 />
+                                 <Label for="email" className={styles.inputLabel}>Correo electrónico</Label>
+                             </FormGroup>
+                             <FormGroup className={styles.formGroup}>
+                                 <Input
+                                     type="password"
+                                     name="password"
+                                     id="password"
+                                     className={styles.inputField}
+                                     placeholder=" "
+                                     value={formData.password}
+                                     onChange={handleChange}
+                                     required
+                                     minLength="8"
+                                 />
+                                 <Label for="password" className={styles.inputLabel}>Contraseña</Label>
+                             </FormGroup>
+                             <FormGroup className={styles.formGroup}>
+                                 <Input
+                                     type="password"
+                                     name="confirmPassword"
+                                     id="confirmPassword"
+                                     className={styles.inputField}
+                                     placeholder=" "
+                                     value={formData.confirmPassword}
+                                     onChange={handleChange}
+                                     required
+                                     minLength="8"
+                                 />
+                                 <Label for="confirmPassword" className={styles.inputLabel}>Confirmar contraseña</Label>
+                             </FormGroup>
+                             <Button type="submit" className={styles.buttonPrimary} disabled={loading}>
+                                 {loading ? 'Registrando...' : 'Registrarse'}
+                             </Button>
+                         </Form>
+                         <p className={styles.signupLink}>
+                             ¿Ya tienes una cuenta? <Link to="/signin">Iniciar sesión</Link>
+                         </p>
+                     </div>
+                 
+             </Row>
+            </Container>
+        </div>    
     );
 };
 
 export default SignUp;
-
-
-
-
-
-

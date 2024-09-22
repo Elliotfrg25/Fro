@@ -1,161 +1,110 @@
-:root {
-    --color-primary: #3498db;
-    --color-secondary: #2ecc71;
-    --color-accent: #f1c40f;
-    --color-bg: #222;
-    --color-text: #f4f4f4;
-}
-
-body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-}
-
-.container {
+/* Ajuste general del contenedor */
+.signupContainer {
+    background-color: #fff;
+    /* Fondo blanco */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    padding: 2rem;
 }
 
+/* Estilo del formulario */
 .signinForm {
-    background-color: rgba(34, 34, 34, 0.9);
+    background-color: #fff;
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    position: relative;
-    z-index: 10;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
     box-sizing: border-box;
+    text-align: left;
 }
 
-.signinForm:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-}
-
+/* Título del formulario */
 .title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    z-index: 2;
-    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
 }
 
+/* Grupo de formularios */
 .formGroup {
+    margin-bottom: 1.5rem;
     position: relative;
-    margin-bottom: 2rem;
 }
 
+/* Campos de entrada */
 .inputField {
     width: 100%;
     padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #ddd;
     border-radius: 5px;
-    outline: none;
-    background: rgba(34, 34, 34, 0.9);
-    color: var(--color-text);
+    background-color: white;
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
-    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
 }
 
+/* Efecto al enfocar el campo */
 .inputField:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    border-color: #333;
+    outline: none;
 }
 
+/* Estilo de las etiquetas */
 .inputLabel {
     position: absolute;
-    left: 1rem;
-    top: 1rem;
-    background-color: rgba(34, 34, 34, 0.9);
-    color: var(--color-text);
+    top: 0;
+    left: 10px;
+    padding: 0 5px;
+    background-color: #fff;
+    transition: all 0.2s ease;
     font-size: 1rem;
-    transition: all 0.3s;
-    padding: 0 0.5rem;
+    color: #aaa;
+    pointer-events: none;
 }
 
+/* Mover la etiqueta cuando el input está lleno o enfocado */
 .inputField:focus+.inputLabel,
 .inputField:not(:placeholder-shown)+.inputLabel {
-    top: -0.75rem;
-    left: 1rem;
-    color: var(--color-primary);
-    font-size: 0.85rem;
-    font-weight: bold;
-    z-index: 10;
+    top: -12px;
+    left: 10px;
+    font-size: 0.75rem;
+    color: #333;
+    background-color: #fff;
 }
 
-.forgotPassword a,
-.signupLink a {
-    color: var(--color-accent);
-    text-decoration: none;
-}
-
-.forgotPassword a:hover,
-.signupLink a:hover {
-    text-decoration: underline;
-}
-
+/* Botón de registro */
 .buttonPrimary {
     width: 100%;
-    padding: 1rem;
-    background-color: var(--color-primary);
-    color: white;
+    padding: 0.75rem;
+    background-color: #000;
+    color: #fff;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .buttonPrimary:hover {
-    background-color: var(--color-secondary);
+    background-color: #333;
 }
 
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-    .signinForm {
-        padding: 1.5rem;
-        width: 90%;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    .inputField {
-        font-size: 0.9rem;
-    }
+/* Enlace de inicio de sesión */
+.signupLink,
+.forgotPassword {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
-@media (max-width: 480px) {
-    .signinForm {
-        padding: 1.2rem;
-        width: 95%;
-    }
+.signupLink a,
+.forgotPassword a {
+    color: #000;
+    text-decoration: none;
+}
 
-    .title {
-        font-size: 1.8rem;
-    }
-
-    .inputField {
-        font-size: 0.85rem;
-        padding: 0.8rem;
-    }
-
-    .buttonPrimary {
-        font-size: 0.9rem;
-        padding: 0.8rem;
-    }
+.signupLink a:hover,
+.forgotPassword a:hover {
+    text-decoration: underline;
 }

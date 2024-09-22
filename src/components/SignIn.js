@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Alert } from 'reactstrap'; // Importa Alert para manejar errores visuales
-import styles from '../styles/SignIn.module.css'; // Importa el CSS module
+import { Alert } from 'reactstrap';
+import styles from '../styles/SignIn.module.css'; // Asegúrate de que estos estilos reflejen los cambios
 import CustomButton from './CustomButton/CustomButton';
-import { useAuth } from '../components/AuthContext'; // Importa el contexto de autenticación
+import { useAuth } from '../components/AuthContext';
 
 const SignIn = () => {
-    const { signIn } = useAuth(); // Extrae la función de signIn del contexto
-    const [error, setError] = useState(null); // Estado para errores
+    const { signIn } = useAuth();
+    const [error, setError] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         e.stopPropagation();
-        setError(null); // Resetea el estado de error antes de intentar iniciar sesión
+        setError(null);
 
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -28,12 +28,10 @@ const SignIn = () => {
     };
 
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>PROMETEO</h1>
+        <div className={styles.signupContainer}>
             <div className={styles.signinForm}>
-                <h2>Iniciar sesión</h2>
+                <h2 className={styles.title}>Iniciar sesión</h2>
 
-                {/* Mostrar alerta en caso de error */}
                 {error && <Alert color="danger">{error}</Alert>}
 
                 <form onSubmit={handleSubmit}>
@@ -42,7 +40,7 @@ const SignIn = () => {
                             name="email"
                             type="email"
                             id="email"
-                            className={`${styles.formControl} ${styles.inputField}`}
+                            className={styles.inputField}
                             placeholder="Correo electrónico"
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                             required
@@ -54,14 +52,14 @@ const SignIn = () => {
                             name="password"
                             type="password"
                             id="password"
-                            className={`${styles.formControl} ${styles.inputField}`}
+                            className={styles.inputField}
                             placeholder="Contraseña"
                             minLength="8"
                             required
                         />
                         <label htmlFor="password" className={styles.inputLabel}>Contraseña</label>
                     </div>
-                    <CustomButton variant="contained" type="submit">
+                    <CustomButton variant="contained" type="submit" className={styles.buttonPrimary}>
                         Iniciar sesión
                     </CustomButton>
                 </form>

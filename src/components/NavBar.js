@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem } from "@mui/material";
 import { styled } from "@mui/system";
 import { useAuth } from "./AuthContext";
+import { DollarSign } from "lucide-react";
 
 const StyledToolbar = styled((props) => <Toolbar disableGutters {...props} />)({
     width: '100%',
-    maxWidth: 'none', // Eliminamos cualquier limitación de ancho
+    maxWidth: 'none',
     justifyContent: "space-between",
-    padding: 0, // Eliminamos el padding lateral
+    padding: "0 1rem",
     minHeight: "64px",
     margin: 0,
 });
@@ -40,15 +41,15 @@ const NavBar = () => {
             position="fixed"
             sx={{
                 width: '100%',
-                maxWidth: 'none', // Aseguramos que el AppBar ocupe todo el ancho
-                backgroundColor: "#0f4c5c",
-                padding: 0, // Removemos padding adicional
+                backgroundColor: "black",
+                padding: 0,
                 margin: 0,
                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
             }}
         >
             <StyledToolbar>
                 <Button color="inherit" onClick={() => navigate("/")} sx={{ textTransform: "none" }}>
+                    <DollarSign className={`${['icon']} ${['benefit-icon']}`} />
                     <Typography
                         variant="h5"
                         sx={{
@@ -71,6 +72,7 @@ const NavBar = () => {
                             sx={{
                                 textTransform: "none",
                                 fontSize: "1.2rem",
+                                color: "#fff",
                                 "&:hover": {
                                     backgroundColor: "#007bff",
                                     transition: "0.3s ease",
@@ -121,6 +123,7 @@ const NavBar = () => {
                                 textTransform: "none",
                                 fontSize: "1.2rem",
                                 marginRight: "1rem",
+                                color: "#fff",
                                 "&:hover": {
                                     backgroundColor: "#007bff",
                                     transition: "0.3s ease",
@@ -137,6 +140,7 @@ const NavBar = () => {
                             sx={{
                                 textTransform: "none",
                                 fontSize: "1.2rem",
+                                color: "#fff",
                                 "&:hover": {
                                     backgroundColor: "#007bff",
                                     transition: "0.3s ease",
@@ -155,3 +159,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+

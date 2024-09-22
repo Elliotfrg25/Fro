@@ -1,384 +1,412 @@
-.homePage {
-    /* Cambiado a camelCase */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('../styles/Imagenes/fonde.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: #333;
-    padding: 0 2rem;
-    font-family: 'Poppins', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Animación de desvanecimiento suave al hacer scroll */
-.section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.sectionVisible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Sección de Características (Features) */
-.features {
-    text-align: center;
-    padding: 4rem 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-    background-color: #f5f7fa95;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-}
-
-.featuresTitle {
-    font-size: 2.8rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-.featureItems {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.featureItem {
-    flex: 1;
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    position: relative;
-}
-
-.featureItem:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    background-color: #f0f8ff;
-}
-
-.featureItem h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-.featureItem p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-.featureItem img {
-    max-width: 40px;
-    margin-bottom: 1.5rem;
-}
-
-/* Botón general */
-button {
-    padding: 0.75rem 1.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-5px);
-}
-
-/* Adaptaciones para pantallas pequeñas */
-@media (max-width: 768px) {
-    .features {
-        padding: 2rem 0.5rem;
-    }
-
-    .featureItem {
-        max-width: 100%;
-        margin-bottom: 1.5rem;
-    }
-
-    .featuresTitle {
-        font-size: 2rem;
-    }
-}
-
-/* Sección del Conversor de Moneda */
-.currencyConverter {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #ffffff;
-    border-top: 3px solid #0f4c5c;
-    border-bottom: 3px solid #0f4c5c;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    margin-bottom: 2rem;
-}
-
-.currencyInputs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.currencyInputs input,
-.currencyInputs select {
-    padding: 1rem;
-    border-radius: 8px;
-    border: 2px solid #0f4c5c;
-    font-size: 1.2rem;
-    background-color: #f8f9fa;
-    color: #333;
-    width: 150px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.currencyInputs input:hover,
-.currencyInputs select:hover,
-.currencyInputs input:focus,
-.currencyInputs select:focus {
-    background-color: #ffffff;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    outline: none;
-}
-
-.currencyConverter button {
-    padding: 0.75rem 1.5rem;
-    background-color: #0f4c5c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.currencyConverter button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.currencyConverter button:active {
-    transform: translateY(0);
-}
-
-/* Mensaje de equivalencia */
-.currencyConverter span {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #0f4c5c;
-    font-weight: bold;
-}
-
-/* Sección de Países */
-.countriesList {
-    text-align: center;
-    padding: 3rem 0;
-    background-color: #ffffff95;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.countriesList ul {
-    list-style: none;
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.countriesList li {
-    margin: 0.5rem;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    background-color: rgba(251, 251, 251, 0.1);
-    border-radius: 8px;
-    color: #0f4c5c;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.countriesList li:hover {
-    background-color: rgba(0, 123, 255, 0.2);
-    transform: scale(1.1);
-}
-
-/* Sección de Reseñas */
-.customerReviews {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #ffffff95;
-    border-top: 2px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.reviewItem {
-    margin: 1rem;
-    padding: 1.5rem;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    flex: 1 1 calc(33% - 2rem);
-    max-width: 300px;
     box-sizing: border-box;
 }
 
-.reviewItem:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.homepage {
+    padding-top: 2200px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Asegura que el contenedor principal ocupe toda la pantalla */
+}
+
+/* Estilos del logo en la navegación */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.logo-text {
+    margin-left: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilos para la navegación */
+.navigation {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Sección del héroe (parte superior de la página) */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 24px;
+    background: white;
+    color: black;
+    min-height: 60vh;
+    /* Siempre ocupa toda la altura de la pantalla */
+    text-align: left;
+}
+
+/* Contenedor del contenido dentro de la sección héroe */
+.hero-content {
+    display: flex;
+    justify-content: center;
+    /* Alineación centralizada */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+    /* Hace que el contenido sea flexible */
+    gap: 24px;
+    /* Añadido para mayor separación entre elementos */
+}
+
+/* Estilos del texto en la sección héroe */
+.hero-text {
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: bold;
+    align: left;
+    margin-bottom: 16px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+/* Estilos para los botones en la sección héroe */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-buttons .primary-btn,
+.hero-buttons .secondary-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: black;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: black;
+    color: white;
+    
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    opacity: 0.9;
+}
+
+/* Ajustes en la calculadora */
+.calculator {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.calculator-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.calculator-content p {
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 16px;
+    color: #333;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Ajusta el ancho del botón */
+.full-width {
+    width: 100%;
+}
+
+.full-width button {
+    width: 100%;
+    /* Asegura que el botón ocupe todo el ancho */
+    padding: 12px 24px;
+    /* Ajusta el padding para un mejor tamaño del botón */
+    background-color: black;
+    /* El fondo negro que mencionas */
+    color: white;
+    /* Texto blanco */
+    border: none;
+    /* Sin bordes */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón */
+    font-size: 16px;
+    /* Ajusta el tamaño del texto */
+    transition: background-color 0.3s ease;
+    /* Suaviza el hover */
+    min-height: 48px; /* Ajusta la altura del botón */
+}
+
+.full-width button:hover {
+    background-color: #333;
+    /* Color más oscuro al pasar el ratón */
+}
+
+/* Sección de beneficios */
+.benefits-section {
+    background-color: #f3f4f6;
+    padding: 48px 24px;
+    text-align: center;
+    min-height: 50vh;
+    /* Ajuste para asegurar que esta sección también tenga suficiente altura */
+}
+
+.benefits-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* Contenedor de los beneficios */
+.benefits {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten en filas en pantallas pequeñas */
+    gap: 24px;
+    /* Añadido para dar más espacio entre ítems */
+}
+
+.benefit-item {
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 24px;
+}
+
+.benefit-item h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.benefit-item p {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    color: #1e3a8a;
+}
+
+/* Nueva Sección: Países de destino */
+.destination-countries {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.countries-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.country-card {
+    background-color: #f3f4f6;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    max-width: 200px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Nueva Sección: Reseñas de clientes */
+.customer-reviews {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f3f4f6;
+    /* Color de fondo claro */
+    margin-top: 3rem;
+}
+
+.customer-reviews h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.review-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera para destacar el testimonio */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-item h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.review-item p {
+    font-size: 1rem;
+    color: #6b7280;
+    /* Texto gris */
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
 .stars {
     color: #FFD700;
+    /* Color dorado para las estrellas */
     font-size: 1.5rem;
-    margin-top: 0.5rem;
 }
 
-/* Sección de Bancos Asociados */
-.associatedBanks {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #ffffff95;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.bankLogos img {
-    width: 100px;
-    margin: 0 1rem;
-    filter: grayscale(50%);
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.bankLogos img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.1);
-}
-
-/* Footer */
-.footer {
-    width: 100%;
-    padding: 2rem;
-    background-color: #0f4c5c;
-    text-align: center;
-    color: white;
-    font-size: 0.9rem;
-}
-
-.footerContainer {
-    /* Adaptado para CSS Modules */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: left;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
-}
-
-.footerSection {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footerSection h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.footerSection ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footerSection ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footerSection ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footerSection ul li a:hover {
-    color: #007bff;
-}
-
-.socialIcons a {
-    display: inline-block;
-    margin: 0 1rem;
-    color: white;
-    text-decoration: none;
-}
-
-.socialIcons a:hover {
-    color: #007bff;
-}
-
-.footerSection form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.footerSection form input {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 1rem;
-    width: 100%;
-    max-width: 250px;
-}
-
-.footerSection form button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-}
-
-.footerSection form button:hover {
-    background-color: #0056b3;
-}
-
+/* Responsivo: se adapta a pantallas más pequeñas */
 @media (max-width: 768px) {
-    .footerContainer {
+    .review-item {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .customer-reviews h2 {
+        font-size: 1.5rem;
+    }
+}
+/* Estilos del pie de página */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin-top: auto;
+    /* Asegura que el footer siempre se quede abajo */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* Permite que las secciones se ajusten en filas en pantallas pequeñas */
+    margin-bottom: 16px;
+}
+
+.footer-section {
+    max-width: 700px;
+    margin-bottom: 16px;
+}
+
+.footer-section h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #374151;
+    padding-top: 16px;
+}
+
+.footer-bottom p {
+    color: #9ca3af;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .hero-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .calculator {
+        max-width: 100%;
+    }
+
+    .benefit-item {
+        max-width: 100%;
     }
 }
