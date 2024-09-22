@@ -1,83 +1,73 @@
-@import './SignIn.module.css';
-
-.transaction-history {
-    background-color: rgba(34, 34, 34, 0.8);
+.transactionContainer {
+    background-color: white;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 90%;
     max-width: 900px;
-    position: relative;
-    z-index: 10;
-    margin: 0 auto;
-    /* Centrar el contenedor */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.transaction-history:hover {
-    background-color: rgba(34, 34, 34, 0.9);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-.transaction-history h2 {
-    margin-bottom: 1.5rem;
-    color: var(--color-text);
+.title {
     text-align: center;
-    /* Centrar el título */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
 }
 
-.transaction-table {
+.transactionTable {
     width: 100%;
     border-collapse: collapse;
-    color: var(--color-text);
+    background-color: white;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil para la tabla */
 }
 
-.transaction-table th,
-.transaction-table td {
-    padding: 8px 12px;
+.transactionTable th,
+.transactionTable td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: background-color 0.3s ease;
-    /* Transición suave para el hover */
+    color: #333;
 }
 
-.transaction-table th {
-    background-color: rgba(52, 152, 219, 0.2);
+.transactionTable th {
+    background-color: black;
+    color: white;
     font-weight: bold;
 }
 
-.transaction-table tbody tr:hover {
-    background-color: rgba(52, 152, 219, 0.2);
-    transform: translateY(-2px);
-    /* Efecto de elevación al hacer hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.transactionTable tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
 }
 
-/* Estilos responsivos */
+.transactionTable td {
+    font-size: 1rem;
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
-    .transaction-history {
-        width: 90%;
+    .transactionContainer {
         padding: 1.5rem;
+        width: 95%;
     }
 
-    .transaction-table th,
-    .transaction-table td {
-        padding: 6px 10px;
+    .transactionTable th,
+    .transactionTable td {
+        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
-    .transaction-history {
-        width: 95%;
+    .transactionContainer {
         padding: 1.2rem;
+        width: 100%;
     }
 
-    .transaction-table th,
-    .transaction-table td {
-        padding: 5px 8px;
-        font-size: 0.85rem;
-        /* Ajuste del tamaño del texto en pantallas pequeñas */
+    .transactionTable th,
+    .transactionTable td {
+        font-size: 0.9rem;
+        padding: 8px;
     }
-} 
+}

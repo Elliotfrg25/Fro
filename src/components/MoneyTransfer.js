@@ -9,7 +9,6 @@ const MoneyTransfer = () => {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.title}>PROMETEO</h1>
             <div className={styles.transferForm}>
                 <h2>Transferencia de dinero</h2>
                 <form onSubmit={handleTransfer}>

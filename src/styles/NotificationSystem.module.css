@@ -1,30 +1,48 @@
 .notificationContainer {
     padding: 2rem;
-    background-color: rgba(34, 34, 34, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    /* Fondo ligeramente más oscuro para mayor contraste */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra más suave y sutil */
     width: 80%;
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 450px;
+    /* Amplié ligeramente el ancho máximo para pantallas grandes */
+    margin: 2rem auto;
+    /* Añadí un poco más de margen para separar visualmente el componente */
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.notificationContainer:hover {
+    transform: translateY(-4px);
+    /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    /* Sombra más pronunciada al hacer hover */
 }
 
 .notificationItem {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
+    /* Fondo un poco más claro para destacar el contenido */
     color: var(--color-text);
-    border-color: rgba(255, 255, 255, 0.2);
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid black;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    /* Aumenté ligeramente el relleno para mayor legibilidad */
+    border-radius: 8px;
+    /* Bordes más redondeados para un diseño más moderno */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .notificationItem:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.25);
+    /* Cambio de color más notable al hacer hover */
+    transform: translateY(-4px);
+    /* Movimiento más suave */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    /* Sombra más definida al hacer hover */
 }
 
-/* Responsividad para pantallas pequeñas */
+/* Ajustes responsivos para pantallas medianas */
 @media (max-width: 768px) {
     .notificationContainer {
         width: 90%;
@@ -32,10 +50,12 @@
     }
 
     .notificationItem {
-        padding: 8px;
+        padding: 10px 12px;
+        /* Ajuste ligero para pantallas más pequeñas */
     }
 }
 
+/* Ajustes para pantallas muy pequeñas (móviles) */
 @media (max-width: 480px) {
     .notificationContainer {
         width: 100%;
@@ -43,7 +63,8 @@
     }
 
     .notificationItem {
-        padding: 6px;
-        font-size: 0.9rem;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        /* Disminuí ligeramente el tamaño de la fuente en pantallas pequeñas */
     }
 }

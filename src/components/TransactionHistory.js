@@ -1,6 +1,6 @@
-// src/components/TransactionHistory.js
 import React, { useState } from 'react';
-import '../styles/TransactionHistory.module.css';
+import { Table, Container, Row, Col } from 'reactstrap';
+import styles from '../styles/TransactionHistory.module.css'; // El archivo CSS modular
 
 const sampleTransactions = [
     {
@@ -22,41 +22,44 @@ const sampleTransactions = [
     // Más transacciones de ejemplo
 ];
 
-const TransactionHistory = () => {  // eslint-disable-next-line 
-    const [transactions, setTransactions] = useState(sampleTransactions);  
+const TransactionHistory = () => {
+    const [transactions] = useState(sampleTransactions);
 
     const formatDate = (date) => {
         return new Date(date).toLocaleDateString();
     };
 
     return (
-        <div className="container">
-            <h1 className="title">PROMETEO</h1>
-            <div className="transaction-history">
-                <h2>Historial de transacciones</h2>
-                <table className="transaction-table">
-                    <thead>
-                        <tr>
-                            <th>Monto</th>
-                            <th>Moneda</th>
-                            <th>Dirección de destino</th>
-                            <th>Fecha</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {transactions.map((transaction) => (
-                            <tr key={transaction.id}>
-                                <td>{transaction.amount}</td>
-                                <td>{transaction.currency}</td>
-                                <td>{transaction.destination}</td>
-                                <td>{formatDate(transaction.date)}</td>
-                                <td>{transaction.status}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+        <div className={styles.transactionContainer}>
+            <Container>
+                <Row>
+                    <Col>
+                        <h2 className={styles.title}>Historial de Transacciones</h2>
+                        <Table className={styles.transactionTable} responsive>
+                            <thead>
+                                <tr>
+                                    <th>Monto</th>
+                                    <th>Moneda</th>
+                                    <th>Dirección de Destino</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {transactions.map((transaction) => (
+                                    <tr key={transaction.id}>
+                                        <td>{transaction.amount}</td>
+                                        <td>{transaction.currency}</td>
+                                        <td>{transaction.destination}</td>
+                                        <td>{formatDate(transaction.date)}</td>
+                                        <td>{transaction.status}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };

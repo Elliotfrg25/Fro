@@ -16,7 +16,7 @@ import NotificationSystem from "./components/NotificationSystem";
 import Support from "./components/Support";
 import SecuritySettings from "./components/SecuritySettings";
 import ErrorPage from "./components/ErrorPage";
-import Reports from "./components/Reports";
+// import Reports from "./components/Reports";
 import ThirdPartyIntegration from "./components/ThirdPartyIntegration";
 import UserProfile from "./components/UserProfile";
 import BankAccounts from "./components/BankAccounts";
@@ -38,12 +38,12 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             {/* Rutas protegidas */}
-            <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
+            <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}> 
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/transfer" element={<MoneyTransfer />} />
               <Route path="/history" element={<TransactionHistory />} />
               <Route path="/notifications" element={<NotificationSystem />} />
-              <Route path="/reports" element={<Reports />} />
+              {/* <Route path="/reports" element={<Reports />} />  */}
             </Route>
             {/* Otras rutas */}
             <Route path="/forgot-password" element={<ForgotPassword />} />
