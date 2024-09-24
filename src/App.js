@@ -1,4 +1,3 @@
-// src/App.js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from './components/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
@@ -21,6 +20,9 @@ import ThirdPartyIntegration from "./components/ThirdPartyIntegration";
 import UserProfile from "./components/UserProfile";
 import BankAccounts from "./components/BankAccounts";
 
+// Importa el nuevo componente Info
+import Info from "./components/Info";
+
 // Importa los estilos
 import styles from './App.module.css'; // Importa el CSS modular
 import './global.css'; // Importa el CSS global
@@ -37,8 +39,10 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+            {/* Nueva ruta para el componente Info */}
+            <Route path="/info" element={<Info />} />
             {/* Rutas protegidas */}
-            <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}> 
+            <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/transfer" element={<MoneyTransfer />} />
               <Route path="/history" element={<TransactionHistory />} />

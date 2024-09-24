@@ -1,10 +1,13 @@
+import React from 'react';
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import { DollarSign, Globe, Shield } from "lucide-react";
 import styles from '../styles/HomePage.module.css';
 
 export default function Homepage() {
+    const navigate = useNavigate(); // Definir navigate aquí dentro del componente
+
     return (
         <div className={styles['homepage']}>
-
             <main>
                 <section className={styles['hero-section']}>
                     <div className={styles['hero-content']}>
@@ -12,8 +15,18 @@ export default function Homepage() {
                             <h1>Envía dinero a casa de forma rápida y segura</h1>
                             <p>PrometeoRemitly te permite enviar dinero a Colombia y otros países de Sudamérica desde Estados Unidos con tarifas bajas y tipos de cambio competitivos.</p>
                             <div className={styles['hero-buttons']}>
-                                <button className={styles['primary-btn']}>Registrarse</button>
-                                <button className={styles['secondary-btn']}>Más información</button>
+                                <button
+                                    className={styles['primary-btn']}
+                                    onClick={() => navigate("/signup")} // Usar navigate para redirigir
+                                >
+                                    Registrarse
+                                </button>
+                                <button
+                                    className={styles['secondary-btn']}
+                                    onClick={() => navigate("/info")}   
+                                >
+                                    Más información
+                                </button>
                             </div>
                         </div>
 
@@ -64,7 +77,6 @@ export default function Homepage() {
                     </div>
                 </section>
 
-                {/* Nueva Sección: Países de Destino */}
                 <section className={styles['destination-countries']}>
                     <h2 className={styles['section-title']}>Países de destino</h2>
                     <div className={styles['countries-container']}>
@@ -79,39 +91,33 @@ export default function Homepage() {
                     </div>
                 </section>
 
-                {/* Nueva Sección: Testimonios */}
                 <section className={styles['customer-reviews']}>
                     <h2>Descubre por qué millones de personas alrededor del mundo confían en PROMETEOREMITLY</h2>
 
-                    {/* Testimonio 1 */}
                     <div className={styles['review-item']}>
                         <h4>Daniela Rodríguez</h4>
                         <p>"Estoy muy impresionada con esta aplicación. Las tasas de cambio son muy competitivas y el proceso es súper sencillo. Mi mamá en Colombia siempre recibe el dinero sin problemas, y la atención al cliente es excelente. ¡Recomendadísima!"</p>
                         <div className={styles['stars']}>★★★★★</div>
                     </div>
 
-                    {/* Testimonio 2 */}
                     <div className={styles['review-item']}>
                         <h4>Carlos Rodríguez</h4>
                         <p>"La mejor forma de enviar dinero internacionalmente. Tarifas bajas y transacciones rápidas."</p>
                         <div className={styles['stars']}>★★★★★</div>
                     </div>
 
-                    {/* Testimonio 3 */}
                     <div className={styles['review-item']}>
                         <h4>Fernando Lugo</h4>
                         <p>"¡Excelente aplicación! Enviar dinero a mi familia en Colombia nunca había sido tan fácil. La transferencia fue rápida y recibieron el dinero en su cuenta bancaria en cuestión de minutos. Definitivamente la mejor opción para enviar remesas."</p>
                         <div className={styles['stars']}>★★★★★</div>
                     </div>
 
-                    {/* Testimonio 4 */}
                     <div className={styles['review-item']}>
                         <h4>Nelson Ramirez</h4>
                         <p>"He probado varias aplicaciones para enviar dinero a Colombia, pero esta es sin duda la mejor. El servicio es rápido, seguro y confiable. Además, puedo ver el tipo de cambio en tiempo real y siempre he tenido buenas experiencias con las transferencias."</p>
                         <div className={styles['stars']}>★★★★★</div>
-                    </div> 
+                    </div>
                 </section>
-
             </main>
 
             <footer className={styles['footer']}>

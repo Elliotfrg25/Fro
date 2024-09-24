@@ -1,0 +1,48 @@
+.info-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #1F2D3D;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+    color: #28A745;
+    /* Ajusta el color de los iconos */
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-text {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: #4A4A4A;
+}
+
+.flag-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.flag-color {
+    width: 40px;
+    height: 20px;
+    margin: 0 5px;
+}
