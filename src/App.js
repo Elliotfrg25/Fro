@@ -19,13 +19,21 @@ import ErrorPage from "./components/ErrorPage";
 import ThirdPartyIntegration from "./components/ThirdPartyIntegration";
 import UserProfile from "./components/UserProfile";
 import BankAccounts from "./components/BankAccounts";
-
-// Importa el nuevo componente Info
 import Info from "./components/Info";
 
+// Importa Stripe
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+// Importa PaymentForm
+import PaymentForm from "./components/PaymentForm";
+
 // Importa los estilos
-import styles from './App.module.css'; // Importa el CSS modular
-import './global.css'; // Importa el CSS global
+import styles from './App.module.css';
+import './global.css';
+
+// Crea una instancia de Stripe
+const stripePromise = loadStripe('tu-clave-publicable');
 
 function App() {
   const isAuthenticated = !!localStorage.getItem('token'); // Simula el estado de autenticación
@@ -34,12 +42,11 @@ function App() {
     <Router>
       <AuthProvider>
         <NavBar />
-        <div className={styles.App}>  {/* Usando el estilo modular */}
+        <div className={styles.App}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-            {/* Nueva ruta para el componente Info */}
             <Route path="/info" element={<Info />} />
             {/* Rutas protegidas */}
             <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
@@ -47,8 +54,14 @@ function App() {
               <Route path="/transfer" element={<MoneyTransfer />} />
               <Route path="/history" element={<TransactionHistory />} />
               <Route path="/notifications" element={<NotificationSystem />} />
-              {/* <Route path="/reports" element={<Reports />} />  */}
-            </Route>
+              {/* Nueva ruta protegida para agregar fondos */}
+              <Route path="/add-funds" element={
+                <Elements stripe={stripePromise}>
+                  <PaymentForm />
+                </Elements>
+              } />
+              {/* <Route path="/reports" element={<Reports />} /> */}
+           </Route>
             {/* Otras rutas */}
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/currency-converter" element={<CurrencyConverter />} />
