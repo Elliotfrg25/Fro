@@ -16,7 +16,7 @@ jobs:
       - name: Use Node.js 20 with cache
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '20.x'
           cache: 'npm'  # Usa el caché de npm para evitar problemas de versión
 
       - name: npm install, build, and test
