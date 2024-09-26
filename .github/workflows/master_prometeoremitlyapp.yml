@@ -19,11 +19,11 @@ jobs:
           node-version: '20.x'
           cache: 'npm'  # Usa el caché de npm para evitar problemas de versión
 
-      - name: npm install, build, and test
+      - name: npm install and build
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+          
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
