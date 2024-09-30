@@ -63,6 +63,9 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
+          allow-no-subscriptions: true  # Prueba permitiendo que no haya suscripciones, por si el problema es de permisos
+          enable-AzPSSession: true  # Habilita la sesión de PowerShell para una autenticación más robusta
+
 
       # Verificación del login a Azure
       - name: Verify Azure Login
