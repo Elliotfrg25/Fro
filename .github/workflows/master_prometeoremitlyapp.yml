@@ -49,14 +49,27 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-      
+
+      # Verificación de secretos (imprime variables pero oculta los valores reales)
+      - name: Verify secrets
+        run: |
+          echo "CLIENT_ID is $AZUREAPPSERVICE_CLIENTID"
+          echo "TENANT_ID is $AZUREAPPSERVICE_TENANTID"
+          echo "SUBSCRIPTION_ID is $AZUREAPPSERVICE_SUBSCRIPTIONID"
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
-          
+
+      # Verificación del login a Azure
+      - name: Verify Azure Login
+        run: |
+          az account show
+        env:
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
