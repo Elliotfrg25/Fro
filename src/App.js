@@ -22,8 +22,8 @@ import BankAccounts from "./components/BankAccounts";
 import Info from "./components/Info";
 
 // Importa Stripe
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+// import { Elements } from '@stripe/react-stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 
 // Importa PaymentForm
 import PaymentForm from "./components/PaymentForm";
@@ -32,8 +32,8 @@ import PaymentForm from "./components/PaymentForm";
 import styles from './App.module.css';
 import './global.css';
 
-// Crea una instancia de Stripe
-const stripePromise = loadStripe('tu-clave-publicable');
+// Crea una instancia de Stripe (comentado)
+// const stripePromise = loadStripe('tu-clave-publicable');
 
 function App() {
   const isAuthenticated = !!localStorage.getItem('token'); // Simula el estado de autenticación
@@ -55,13 +55,15 @@ function App() {
               <Route path="/history" element={<TransactionHistory />} />
               <Route path="/notifications" element={<NotificationSystem />} />
               {/* Nueva ruta protegida para agregar fondos */}
+              {/* 
               <Route path="/add-funds" element={
                 <Elements stripe={stripePromise}>
                   <PaymentForm />
                 </Elements>
               } />
+              */}
               {/* <Route path="/reports" element={<Reports />} /> */}
-           </Route>
+            </Route>
             {/* Otras rutas */}
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/currency-converter" element={<CurrencyConverter />} />
