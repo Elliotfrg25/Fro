@@ -28,7 +28,7 @@
 
   "scripts": {
     
-    "start": "react-scripts start",
+    "start": "PORT=8080 react-scripts start",
     "build": "webpack --config webpack.config.js",
     "test": "echo \"Skipping tests...\"",
     "eject": "react-scripts eject"
