@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { ArrowRightLeft } from "lucide-react";
 import styles from '../styles/CurrencyConverter.module.css'; // Importa solo el CSS module

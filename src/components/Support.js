@@ -1,3 +1,4 @@
+import React from 'react';
 import React, { useState } from 'react';
 import styles from '../styles/Support.module.css'; // Importar el archivo CSS Module
 

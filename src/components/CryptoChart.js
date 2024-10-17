@@ -1,3 +1,4 @@
+import React from 'react';
 import React, { useEffect, useRef } from "react";
 import { Chart } from 'chart.js';
 import { LineController, LineElement, PointElement, LinearScale, Title, Tooltip, CategoryScale } from 'chart.js';
