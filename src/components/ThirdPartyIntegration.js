@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useState } from 'react';
 import styles from '../styles/ThirdPartyIntegration.module.css'; // Usar CSS modules para los estilos
 

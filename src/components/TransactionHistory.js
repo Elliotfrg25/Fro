@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useState } from 'react';
 import { Table, Container, Row, Col } from 'reactstrap';
 import styles from '../styles/TransactionHistory.module.css'; // El archivo CSS modular

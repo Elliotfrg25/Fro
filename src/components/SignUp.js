@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container, Row, Alert } from 'reactstrap';
 import styles from '../styles/SignUp.module.css';
